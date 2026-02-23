@@ -1,10 +1,10 @@
 # xdev
 
-Portable AI dev workflow for personal projects using Claude Code CLI.
+General-purpose AI dev workflow using Claude Code CLI.
 
 ## Quick Reference
 
-- Status & next steps: `docs/xdev-workflow/STATUS.md`
+- Status & direction: `docs/xdev-workflow/STATUS.md`
 - Design doc: `docs/xdev-workflow/design.md`
 - Decisions: `docs/xdev-workflow/decisions.md`
 
@@ -15,6 +15,9 @@ Portable AI dev workflow for personal projects using Claude Code CLI.
 
 ## Working on This Project
 
-This project is a workflow definition, not application code. Changes are
+This project defines a workflow, not application code. Changes are
 typically to documentation and command files (`~/.claude/commands/xdev-*.md`).
-Read `docs/xdev-workflow/STATUS.md` first to understand current state.
+Read `docs/xdev-workflow/STATUS.md` first to understand current state
+and improvement directions.
+
+After making changes, update STATUS.md and commit to preserve progress.
