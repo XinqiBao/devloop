@@ -1,0 +1,27 @@
+{
+  "description": "xdev workflow hooks: commit format validation, sensitive file protection",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate-commit-msg.py",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/protect-sensitive.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
