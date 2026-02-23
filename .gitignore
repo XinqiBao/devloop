@@ -1,9 +1,3 @@
-__pycache__/
-*.pyc
-.venv/
-*.egg-info/
-dist/
-build/
-.worktrees/
-result.json
+.DS_Store
 *.log
+tags

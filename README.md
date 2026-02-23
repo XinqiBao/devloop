@@ -1,29 +1,35 @@
-# devloop
+# xdev
 
-An AI autonomous development loop scheduler. Runs on a remote machine, picks up
-GitHub issues, implements solutions via Claude Code CLI, and submits PRs.
+A portable, project-agnostic AI dev workflow for personal projects using
+Claude Code CLI.
 
-## Features
+## What It Does
 
-- Automatic issue selection and prioritization
-- Claude Code CLI execution in isolated git worktrees
-- Safety validation before PR submission
-- Telegram and email notifications
-- Code review and issue discovery during idle time
-- 5-hour scheduling aligned with Claude Pro quota refresh
+Three slash commands that standardize AI-assisted development:
 
-## Quick Start
+- `/xdev-implement` — Handle an issue: fetch → assess → implement → test → PR
+- `/xdev-draft` — Draft a well-structured issue from a vague idea
+- `/xdev-setup` — Project health check + CLAUDE.md onboarding
 
-1. Clone: `git clone git@github.com:XinqiBao/devloop.git`
-2. Install: `pip install -e ".[dev]"`
-3. Configure: `cp configs/config.example.yaml ~/.config/devloop/config.yaml`
-4. Edit config with your settings
-5. Run once: `python -m src.scheduler --once`
+Plus a global `CLAUDE.md` with development principles that auto-load every session.
+
+## Install
+
+```bash
+git clone git@github.com:XinqiBao/devloop.git
+cd devloop
+# Files are also managed via dotfiles:
+# ~/git/dotfiles/install-claude.sh
+```
 
 ## Documentation
 
-- [Design Document](docs/plans/2026-02-21-devloop-design.md)
+- [Status & What's Next](docs/xdev-workflow/STATUS.md)
+- [Design Document](docs/xdev-workflow/design.md)
+- [Design Decisions](docs/xdev-workflow/decisions.md)
 
-## License
+## Archive
 
-MIT
+The `archive/devloop-scheduler/` directory contains an earlier automated
+scheduler design. The interactive xdev workflow replaced it as the
+primary approach.
