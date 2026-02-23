@@ -1,8 +1,11 @@
 # xdev v2 Improvement Design
 
-> Brainstormed and validated 2026-02-23. Execute incrementally.
-> This document is self-contained — includes exact formats and schemas
-> needed for implementation without further research.
+> **Status: Executed (2026-02-23).** All priority items completed.
+> Remaining items (CLAUDE.md modularization, hooks expansion) are tracked
+> as improvement directions in `STATUS.md`.
+>
+> Brainstormed and validated 2026-02-23. This document is preserved as
+> reference for formats, schemas, and design rationale.
 
 ## Strategy
 
@@ -253,64 +256,55 @@ Exit 2 to block the edit.
 }
 ```
 
-### Updated approach: use hookify instead of hand-written hooks
+### Updated approach: native hooks in xdev plugin
 
-Install hookify plugin and use `/hookify` to create rules:
-
-```
-/hookify Enforce conventional commits format on git commit messages
-/hookify Block editing files matching *.env or *credentials* or *secret*
-/hookify Auto-format code after file edits using project formatter
-```
-
-hookify generates `.claude/hookify.*.local.md` markdown rule files.
-These are human-readable and can be versioned in dotfiles repo.
+> **Decision changed**: Originally planned to use hookify for all hooks.
+> Final implementation uses native Python hooks in the xdev plugin for
+> portability (auto-deployed on `claude plugin install`). hookify kept
+> for ad-hoc project-level rules only. See decisions.md "Native Hooks
+> over hookify" for rationale.
 
 The JSON schemas above are kept as reference for understanding how
-hooks work under the hood, but hookify abstracts this away.
+hooks work under the hood.
 
-### Implementation order
+### Implementation order (actual)
 
-1. Install hookify plugin
-2. Use `/hookify` for commit format rule — test with valid/invalid messages
-3. Add sensitive file protection rule
-4. Add auto-format rule (project-specific)
-5. Hook 4 (stop verification) — try manually if needed later
+1. Installed hookify plugin (kept for ad-hoc use)
+2. Created native Python hooks in xdev plugin instead:
+   - `validate-commit-msg.py`: PreToolUse on Bash, warns on bad format
+   - `protect-sensitive.py`: PreToolUse on Edit|Write|MultiEdit, blocks sensitive files
+3. Auto-format hook deferred to P3 (project-specific, per-project config)
+4. Stop verification hook deferred to P3 (exploratory)
 
-## 5. Plugin Packaging (P4, Future)
+## 5. Plugin Packaging (Done — accelerated from P4)
 
-When sections 2-4 are stable (validated on 3-4 projects):
+Completed 2026-02-23. devloop repo serves as repository marketplace.
 
-1. Install `plugin-dev` plugin for scaffolding and validation
-2. Create plugin structure (see below)
-3. CLAUDE.md stays in dotfiles repo (not in plugin — different layer)
-4. Create repository marketplace repo
-5. Publish and test cross-machine install
-
-### Plugin structure target
+### Actual structure
 
 ```
-xdev-plugin/
+devloop/                          # repo root = marketplace
   .claude-plugin/
-    plugin.json             # only manifest goes here
-  skills/
-    xdev-implement/
-      SKILL.md
-    xdev-draft/
-      SKILL.md
-    xdev-setup/
-      SKILL.md
-      templates/            # CLAUDE.md template, checklist
-  hooks/
-    hooks.json              # commit format, auto-format, file protection
-  scripts/
-    validate-commit-msg.sh
-    auto-format.sh
-    protect-sensitive.sh
-  LICENSE
+    marketplace.json              # marketplace manifest
+  plugins/xdev/
+    .claude-plugin/
+      plugin.json                 # plugin manifest
+    skills/
+      xdev-implement/SKILL.md
+      xdev-draft/SKILL.md
+      xdev-setup/SKILL.md
+    hooks/
+      hooks.json                  # commit format, file protection
+    scripts/
+      validate-commit-msg.py
+      protect-sensitive.py
 ```
 
-### plugin.json format
+Install: `claude plugin install xdev@devloop`
+
+CLAUDE.md stays in dotfiles repo (two-layer separation preserved).
+
+### plugin.json format (reference)
 
 ```json
 {
@@ -320,8 +314,7 @@ xdev-plugin/
   "author": {
     "name": "devloop"
   },
-  "license": "MIT",
-  "keywords": ["workflow", "development", "issues", "setup"]
+  "license": "MIT"
 }
 ```
 
@@ -334,12 +327,12 @@ Use `${CLAUDE_PLUGIN_ROOT}` in hook scripts for portable paths.
 |------|----------|--------|------|
 | Plugin inventory doc | P0 | Done | Research session |
 | STATUS.md / decisions update | P0 | Done | Research session |
-| Install hookify + claude-md-management | P0 | Ready | Next session |
-| Commands → Skills migration | P1 | Ready | Next session |
-| Hooks via hookify | P1 | Ready | Next session |
-| xdev-implement enhancement (parallel agents) | P2 | Designed | After skills work |
+| Install hookify + claude-md-management | P0 | Done | 2026-02-23 |
+| Commands → Skills migration | P1 | Done | 2026-02-23 |
+| Hooks (native Python, not hookify) | P1 | Done | 2026-02-23 |
+| xdev-implement enhancement (parallel agents) | P2 | Done | 2026-02-23 |
+| Plugin packaging (repository marketplace) | P4→P0 | Done | 2026-02-23 |
 | CLAUDE.md modularization | P3 | Not needed yet | When CLAUDE.md grows |
-| Plugin packaging | P4 | Designed | When workflow stable |
 
 ## Key Design Decisions (Summary)
 
@@ -348,10 +341,12 @@ Use `${CLAUDE_PLUGIN_ROOT}` in hook scripts for portable paths.
   plugin-specific commands.
 - **No feature-dev**: Conflicts with superpowers' workflow control. Reference
   its parallel agent pattern in xdev-implement instead.
-- **hookify for hooks**: Simpler than hand-writing JSON/scripts. Official
-  Anthropic plugin with ongoing maintenance.
+- **Native hooks over hookify**: Native Python hooks in plugin for universal
+  rules (portable, auto-deployed). hookify kept for ad-hoc project-level rules.
 - **Plugin selection principle**: High-coverage or don't install. Avoid plugins
   where only a small fraction of features would be used.
+- **Two-layer separation**: Plugin ships process (skills, hooks). Dotfiles
+  ship principles (CLAUDE.md).
 
 ## Reference Links
 
