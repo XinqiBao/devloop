@@ -253,13 +253,29 @@ Exit 2 to block the edit.
 }
 ```
 
+### Updated approach: use hookify instead of hand-written hooks
+
+Install hookify plugin and use `/hookify` to create rules:
+
+```
+/hookify Enforce conventional commits format on git commit messages
+/hookify Block editing files matching *.env or *credentials* or *secret*
+/hookify Auto-format code after file edits using project formatter
+```
+
+hookify generates `.claude/hookify.*.local.md` markdown rule files.
+These are human-readable and can be versioned in dotfiles repo.
+
+The JSON schemas above are kept as reference for understanding how
+hooks work under the hood, but hookify abstracts this away.
+
 ### Implementation order
 
-1. Start with Hook 1 (commit format) — highest value, lowest risk
-2. Write the shell script, add to settings.local.json
-3. Test on a real project (try valid and invalid commit messages)
-4. Once stable, add Hook 2 and 3
-5. Hook 4 is exploratory — try when the others are proven
+1. Install hookify plugin
+2. Use `/hookify` for commit format rule — test with valid/invalid messages
+3. Add sensitive file protection rule
+4. Add auto-format rule (project-specific)
+5. Hook 4 (stop verification) — try manually if needed later
 
 ## 5. Plugin Packaging (P4, Future)
 
@@ -316,15 +332,26 @@ Use `${CLAUDE_PLUGIN_ROOT}` in hook scripts for portable paths.
 
 | Item | Priority | Status | When |
 |------|----------|--------|------|
-| Plugin inventory doc | P0 | Done | This session |
-| STATUS.md update | P0 | Done | This session |
+| Plugin inventory doc | P0 | Done | Research session |
+| STATUS.md / decisions update | P0 | Done | Research session |
+| Install hookify + claude-md-management | P0 | Ready | Next session |
 | Commands → Skills migration | P1 | Ready | Next session |
-| Hooks: commit format | P1 | Ready | Next session |
-| Hooks: auto-format | P2 | Ready | After commit hook works |
-| Hooks: sensitive files | P2 | Ready | After commit hook works |
-| Hooks: stop verification | P3 | Exploratory | When P1-P2 proven |
+| Hooks via hookify | P1 | Ready | Next session |
+| xdev-implement enhancement (parallel agents) | P2 | Designed | After skills work |
 | CLAUDE.md modularization | P3 | Not needed yet | When CLAUDE.md grows |
 | Plugin packaging | P4 | Designed | When workflow stable |
+
+## Key Design Decisions (Summary)
+
+- **xdev as facade**: /xdev-* skills are the unified entry point. Internally
+  leverage existing plugins' capabilities but don't require user to remember
+  plugin-specific commands.
+- **No feature-dev**: Conflicts with superpowers' workflow control. Reference
+  its parallel agent pattern in xdev-implement instead.
+- **hookify for hooks**: Simpler than hand-writing JSON/scripts. Official
+  Anthropic plugin with ongoing maintenance.
+- **Plugin selection principle**: High-coverage or don't install. Avoid plugins
+  where only a small fraction of features would be used.
 
 ## Reference Links
 
