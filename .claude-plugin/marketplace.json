@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "devloop",
+  "description": "Repository Claude Code plugin marketplace",
+  "owner": {
+    "name": "devloop"
+  },
+  "plugins": [
+    {
+      "name": "xdev",
+      "description": "General-purpose AI dev workflow: issue-to-PR SOP, drafting, project setup",
+      "version": "2.0.0",
+      "author": {
+        "name": "devloop"
+      },
+      "source": "./plugins/xdev",
+      "category": "development"
+    }
+  ]
+}
