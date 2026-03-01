@@ -1,35 +1,44 @@
-# xdev
+# devloop
 
-A portable, project-agnostic AI dev workflow using Claude Code CLI.
-Standardizes common development processes through slash commands and
-persistent development principles.
+Single-source workflow governance for AI-assisted development.
+One canonical rule set, multiple delivery adapters.
 
-## What It Does
+## Active Documentation
 
-Three slash commands that standardize AI-assisted development:
+- Core principles: `docs/core/principles.md`
+- Problem statement: `docs/core/problem-statement.md`
+- Lifecycle process: `docs/process/lifecycle.md`
+- Quality gates: `docs/process/quality-gates.md`
+- Claude adapter: `docs/adapters/claude/overview.md`
+- Codex adapter: `docs/adapters/codex/overview.md`
+- Governance status: `docs/governance/status.md`
+- Governance decisions: `docs/governance/decisions.md`
+- Governance changelog: `docs/governance/changelog.md`
 
-- `/xdev-implement` — Handle an issue: fetch → assess → implement → test → PR
-- `/xdev-draft` — Draft a well-structured issue from a vague idea
-- `/xdev-setup` — Project health check + CLAUDE.md onboarding
+## Delivery Paths
 
-Plus a global `CLAUDE.md` with development principles that auto-load
-every session.
+Claude:
+- Marketplace plugin delivery remains primary: `claude plugin install xdev@devloop`
+- Plugin implementation lives in `plugins/xdev/`
 
-## Install
+Codex:
+- Install shared workflow docs for Codex discovery:
+  - `bash scripts/install-codex.sh`
 
-```bash
-git clone git@github.com:XinqiBao/devloop.git
-# Managed via dotfiles — run install script to symlink:
-~/git/dotfiles/install-claude.sh
+## Repository Layout
+
+```text
+docs/
+  core/
+  process/
+  adapters/
+    claude/
+    codex/
+  governance/
+plugins/xdev/
+scripts/install-codex.sh
 ```
 
-## Documentation
+## Notes
 
-- [Status & Improvement Directions](docs/xdev-workflow/STATUS.md)
-- [Design Document](docs/xdev-workflow/design.md)
-- [Design Decisions](docs/xdev-workflow/decisions.md)
-
-## Archive
-
-The `archive/devloop-scheduler/` directory contains an earlier automated
-scheduler design that was superseded by this interactive workflow approach.
+- Legacy material is removed from active onboarding paths.

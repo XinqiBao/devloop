@@ -67,7 +67,7 @@ Each process section defines:
 ### Layer 3: Adapters (platform-specific)
 
 - `adapters/claude`: plugin/skills/hooks/marketplace mapping
-- `adapters/codex`: skills/AGENTS/symlink + install mapping
+- `adapters/codex`: skills/symlink/install mapping
 
 Adapter documents may reference core/process, but must not introduce conflicting rules.
 
@@ -84,6 +84,16 @@ docs/
 plugins/xdev/
 scripts/
 ```
+
+## Canonical Entry Points
+
+Active onboarding should point to these paths only:
+
+- `README.md` -> `docs/core`, `docs/process`, `docs/adapters`, `docs/governance`
+- `CLAUDE.md` -> canonical source pointers, no duplicate policy body
+- `scripts/install-codex.sh` -> Codex install/update path (`~/.agents/skills`)
+
+`docs/xdev-workflow/` is retained as migration pointers only.
 
 ## Lifecycle Policy (Clean HEAD)
 
@@ -132,7 +142,7 @@ The following become first-class workflow rules:
 ## Migration Strategy
 
 1. Build new active structure (`core/process/adapters/governance`).
-2. Migrate needed content from `docs/xdev-workflow/*`.
+2. Migrate needed content from iterative docs.
 3. Remove legacy/duplicate/archive content from HEAD.
 4. Update plugin/docs/install references.
 5. Validate Claude and Codex onboarding against same source.
