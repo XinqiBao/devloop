@@ -21,7 +21,7 @@ echo
 echo "Verification commands:"
 echo "  test -L \"${TARGET_LINK}\" && echo link-ok"
 echo "  readlink \"${TARGET_LINK}\""
-echo "  find \"${TARGET_LINK}\" -maxdepth 2 -type d | sort"
+echo "  find -L \"${TARGET_LINK}\" -maxdepth 2 -type d | sort"
 echo
 echo "Canonical docs source: ${SOURCE_DIR}"
 echo "Project guide: ${REPO_ROOT}/CLAUDE.md"

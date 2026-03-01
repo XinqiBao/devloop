@@ -44,7 +44,7 @@ ln -sfn "$(pwd)/docs" ~/.agents/skills/devloop
 ```bash
 test -L ~/.agents/skills/devloop && echo "link-ok"
 readlink ~/.agents/skills/devloop
-find ~/.agents/skills/devloop -maxdepth 2 -type d | sort
+find -L ~/.agents/skills/devloop -maxdepth 2 -type d | sort
 gh auth status -h github.com
 ```
 

@@ -10,6 +10,7 @@ Summary:
 - Updated README/CLAUDE entry points to canonical paths only.
 - Removed legacy/obsolete artifacts from HEAD, including `archive/devloop-scheduler/`.
 - Added merge-history policy (non-squash integration) and GitHub auth prerequisites in adapter docs.
+- Converted remaining `docs/xdev-workflow/{design,requirements}.md` files to migration pointers.
 
 Impact:
 - Single canonical workflow source in repository HEAD.
