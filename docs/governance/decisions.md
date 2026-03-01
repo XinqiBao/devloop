@@ -157,3 +157,14 @@ provides one-command install/update across machines. Plugin contains
 skills + hooks + scripts. CLAUDE.md stays in dotfiles (two-layer
 separation preserved). No need for intermediate local-skills phase.
 **Status**: Done. Marketplace manifest at `.claude-plugin/marketplace.json`.
+
+## Integration Policy: Preserve Commit History (2026-03-01)
+**Decision**: Keep task-level commit history intact through PR merge commit
+(non-squash). Squash merge is disallowed for governance rollout branches.
+**Rationale**: Full commit provenance improves traceability, auditability,
+and post-change learning. Collapsing commits hides execution evidence and
+reduces debugging signal in history.
+**Operationalization**:
+- Record merge method in verification reports.
+- Prefer `gh` + credential helper auth normalization before push/PR steps.
+- Do not rewrite published branch history unless explicitly approved.

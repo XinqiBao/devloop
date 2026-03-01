@@ -49,6 +49,7 @@ Use these as onboarding and maintenance entry points:
 3. context-budget: batch work with explicit checkpoints.
 4. parallel-when-safe: parallel only for independent tasks.
 5. self-improvement-loop: governance updates after meaningful changes.
+6. history-integrity: preserve task-level commits via non-squash integration.
 
 ## Next Improvements
 

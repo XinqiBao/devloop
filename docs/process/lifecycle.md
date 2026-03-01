@@ -67,10 +67,12 @@ Inputs:
 Outputs:
 - Consolidated verification summary
 - Pass/fail decision for release readiness
+- Integration strategy record (branch, PR, merge method)
 
 Acceptance criteria:
 - All required checks pass
 - No unresolved critical issues remain
+- Integration method preserves required history provenance
 
 ## 6. improve
 

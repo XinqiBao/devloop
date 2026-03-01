@@ -20,9 +20,9 @@ Use canonical docs as the only authority.
 - Prefer updating canonical docs over duplicating policy text.
 - Keep adapter docs as mappings; do not redefine core/process rules.
 - Require verification evidence before any completion claim.
+- Preserve commit-level history during integration; default to non-squash merge.
 
 ## Implementation Areas
 
 - Claude plugin delivery: `plugins/xdev/`
 - Codex setup/install path: `scripts/install-codex.sh`
-

@@ -52,6 +52,18 @@ Fail conditions:
 - Multiple conflicting authoritative docs remain
 - Active onboarding paths point to obsolete material
 
+## Gate 6: Integration Provenance
+
+Required evidence:
+- PR identifier (or local merge record) and merge method
+- Confirmation that task-level commits are preserved
+- Explicit statement that squash merge was not used
+
+Fail conditions:
+- Squash merge collapses task-level commit history
+- History rewrite occurs without explicit approval
+- Merge method is undocumented in completion report
+
 ## Evidence Format
 
 Use this compact format for each verification block:

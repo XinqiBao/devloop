@@ -46,3 +46,12 @@ Enforcement:
 - Capture friction points discovered during execution.
 - Record concrete process changes in governance documents.
 - Prefer small iterative improvements over infrequent large rewrites.
+
+## history-integrity
+
+Preserve complete commit history so changes remain auditable end-to-end.
+
+Enforcement:
+- Keep task-level commits intact through integration.
+- Default merge policy is PR merge commit (non-squash).
+- Do not rewrite published branch history (e.g., rebase/amend after push) unless explicitly approved.

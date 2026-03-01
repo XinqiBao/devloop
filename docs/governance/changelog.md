@@ -9,6 +9,7 @@ Summary:
 - Added Codex install/update script (`scripts/install-codex.sh`).
 - Updated README/CLAUDE entry points to canonical paths only.
 - Removed legacy/obsolete artifacts from HEAD, including `archive/devloop-scheduler/`.
+- Added merge-history policy (non-squash integration) and GitHub auth prerequisites in adapter docs.
 
 Impact:
 - Single canonical workflow source in repository HEAD.

@@ -16,6 +16,22 @@ What the installer does:
    - `~/.agents/skills/devloop -> <repo>/docs`
 3. Print follow-up verification commands.
 
+## GitHub Auth (for push + PR automation)
+
+If this environment needs to push branch changes or open PRs:
+
+```bash
+gh auth status -h github.com
+# if token is invalid/missing:
+gh auth login -h github.com -p https -w
+gh auth setup-git
+```
+
+Notes:
+- HTTPS remotes require valid GitHub credentials (personal access token via helper/OAuth), not account password.
+- In sandboxed/isolated runtimes, host keychain credentials may be unavailable; run auth in your local shell.
+- Re-check with `gh auth status -h github.com` before PR automation.
+
 ## Manual Install (fallback)
 
 ```bash
@@ -29,11 +45,13 @@ ln -sfn "$(pwd)/docs" ~/.agents/skills/devloop
 test -L ~/.agents/skills/devloop && echo "link-ok"
 readlink ~/.agents/skills/devloop
 find ~/.agents/skills/devloop -maxdepth 2 -type d | sort
+gh auth status -h github.com
 ```
 
 Expected:
 - Symlink exists and points to current repository `docs` directory.
 - Core/process/adapters/governance directories are discoverable through link.
+- GitHub auth status is valid when push/PR actions are required.
 
 ## Local Config References
 

@@ -42,3 +42,5 @@ scripts/install-codex.sh
 ## Notes
 
 - Legacy material is removed from active onboarding paths.
+- Integration policy: preserve task-level commit history; do not squash governance rollout branches.
+- Before push/PR automation, verify GitHub auth: `gh auth status -h github.com`.
