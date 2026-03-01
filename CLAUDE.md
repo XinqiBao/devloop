@@ -1,25 +1,28 @@
-# xdev
+# devloop
 
-General-purpose AI dev workflow using Claude Code CLI.
+This repository defines workflow governance, not application code.
+Use canonical docs as the only authority.
 
-## Quick Reference
+## Canonical Sources
 
-- Status & direction: `docs/xdev-workflow/STATUS.md`
-- Design doc: `docs/xdev-workflow/design.md`
-- Decisions: `docs/xdev-workflow/decisions.md`
+- `docs/core/principles.md`
+- `docs/core/problem-statement.md`
+- `docs/process/lifecycle.md`
+- `docs/process/quality-gates.md`
+- `docs/adapters/claude/overview.md`
+- `docs/adapters/codex/overview.md`
+- `docs/governance/status.md`
+- `docs/governance/decisions.md`
+- `docs/governance/changelog.md`
 
-## Project Structure
+## Execution Rules
 
-- `docs/xdev-workflow/` — All design and status documents
-- `plugins/xdev/` — xdev plugin (skills, hooks, scripts)
-- `.claude-plugin/` — Personal marketplace manifest
-- `archive/devloop-scheduler/` — Archived automated scheduler (not active)
+- Prefer updating canonical docs over duplicating policy text.
+- Keep adapter docs as mappings; do not redefine core/process rules.
+- Require verification evidence before any completion claim.
+- Preserve commit-level history during integration; default to non-squash merge.
 
-## Working on This Project
+## Implementation Areas
 
-This project defines a workflow, not application code. Changes are
-typically to documentation and plugin files (`plugins/xdev/`).
-Read `docs/xdev-workflow/STATUS.md` first to understand current state
-and improvement directions.
-
-After making changes, update STATUS.md and commit to preserve progress.
+- Claude plugin delivery: `plugins/xdev/`
+- Codex setup/install path: `scripts/install-codex.sh`
