@@ -1,48 +1,48 @@
-# Design History — xdev Workflow
+# Workflow Governance Changelog
 
-Consolidated from 4 handoff documents (v0–v3) created during the
-brainstorming sessions on 2026-02-22.
+## 2026-03-01 — Unified Workflow Governance Rollout
 
-## Timeline
+Summary:
+- Reorganized docs into `core`, `process`, `adapters`, and `governance`.
+- Migrated governance source files to `docs/governance/*`.
+- Added Claude and Codex adapter documentation.
+- Added Codex install/update script (`scripts/install-codex.sh`).
+- Updated README/CLAUDE entry points to canonical paths only.
+- Removed legacy/obsolete artifacts from HEAD, including `archive/devloop-scheduler/`.
+
+Impact:
+- Single canonical workflow source in repository HEAD.
+- Claude marketplace delivery preserved.
+- Codex install path enabled without process fork.
+
+## Historical Design Notes (2026-02-22)
+
+Consolidated from 4 handoff documents (v0-v3) created during brainstorming sessions.
 
 ### Session 1: Problem Definition (HANDOFF v0)
-- Established the three pain points: prompt instability, slow design
-  convergence, context compact drift
-- Key decision: **manual trigger**, not automated service
-- Key decision: **intent-driven issues**, not implementation-driven
-- Rejected: AI auto-discovering problems and filing issues (noise too high)
-- Rejected: OpenHands/SWE-agent (what's missing is workflow, not tooling)
-- Core conclusion: "Fix the workflow, not the tools"
+- Established three pain points: prompt instability, slow design convergence, context compact drift.
+- Key decision: manual trigger, not automated service.
+- Key decision: intent-driven issues, not implementation-driven.
+- Rejected AI auto-discovering problems and filing issues (noise too high).
+- Rejected OpenHands/SWE-agent integration (workflow gap, not tooling gap).
 
 ### Session 2: Deep Research (HANDOFF v1)
-- Studied Anthropic's long-running agent patterns, Claude 4 best practices,
-  CLAUDE.md writing guides, community patterns (CCPM, etc.)
-- Identified that "fresh start > compact" is the key insight for context
-  management — not progress files or feature lists
-- Mapped research findings to pain points: CLAUDE.md solves prompt
-  instability, decision-making rules solve convergence, lightweight
-  context instructions are sufficient for compact risk
-- Identified the role separation: CLAUDE.md vs commands vs Superpower skills
+- Studied long-running agent patterns, CLAUDE.md practices, and community workflows.
+- Identified "fresh start > compact" for context management.
+- Mapped research findings to workflow-layer responsibilities.
 
 ### Session 3: Design Convergence (HANDOFF v2)
-- Refined conclusions into actionable design
-- Defined the two-layer architecture (global + project)
-- Scoped the three commands (implement, draft, setup)
-- Created initial command specifications
+- Refined conclusions into actionable design.
+- Defined two-layer architecture and scoped core commands.
 
 ### Session 4: Design Complete (HANDOFF v3)
-- Completed full design document with architecture diagrams
-- Wrote detailed implementation plan (7 tasks)
-- Confirmed all decisions with user
-- Created session-transition prompts for execution phase
+- Completed design and implementation plan for execution phase.
 
 ## Discarded Alternatives
 
 | Alternative | Why Discarded |
 |-------------|---------------|
-| Automated scheduler (devloop) | Too complex for personal use; interactive workflow preferred |
-| AI auto-issue discovery | Noise too high, no mature tools |
-| OpenHands/SWE-agent integration | Missing ingredient is workflow, not tooling |
-| Heavy multi-context checkpoint system | User rarely hits context compact; lightweight instructions suffice |
-| Plugin packaging (Phase 1) | Dotfiles = faster iteration; plugin deferred to Phase 3 |
-| Separate design/implementation contexts | Most issues fit single context; splitting adds friction |
+| Automated scheduler | Too complex for personal workflow; interactive mode preferred |
+| AI auto-issue discovery | Noise too high |
+| OpenHands/SWE-agent integration | Missing ingredient was workflow discipline |
+| Heavy multi-context checkpoint system | User usage pattern favored lighter approach |
