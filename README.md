@@ -1,46 +1,22 @@
 # devloop
 
-Single-source workflow governance for AI-assisted development.
-One canonical rule set, multiple delivery adapters.
+Minimal workflow governance for Claude/Codex skill deployment and continuous self-improvement.
 
-## Active Documentation
+## Read First
 
-- Core principles: `docs/core/principles.md`
-- Problem statement: `docs/core/problem-statement.md`
-- Lifecycle process: `docs/process/lifecycle.md`
-- Quality gates: `docs/process/quality-gates.md`
-- Claude adapter: `docs/adapters/claude/overview.md`
-- Codex adapter: `docs/adapters/codex/overview.md`
-- Governance status: `docs/governance/status.md`
-- Governance decisions: `docs/governance/decisions.md`
-- Governance changelog: `docs/governance/changelog.md`
+- `docs/README.md`
+- `docs/core/principles.md`
+- `docs/process/lifecycle.md`
+- `docs/adapters/claude/overview.md`
+- `docs/adapters/codex/setup.md`
+- `docs/governance/improvement.md`
 
-## Delivery Paths
+## Delivery
 
-Claude:
-- Marketplace plugin delivery remains primary: `claude plugin install xdev@devloop`
-- Plugin implementation lives in `plugins/xdev/`
+- Claude plugin source: `plugins/xdev/`
+- Codex setup script: `scripts/install-codex.sh`
 
-Codex:
-- Install shared workflow docs for Codex discovery:
-  - `bash scripts/install-codex.sh`
+## Integration Policy
 
-## Repository Layout
-
-```text
-docs/
-  core/
-  process/
-  adapters/
-    claude/
-    codex/
-  governance/
-plugins/xdev/
-scripts/install-codex.sh
-```
-
-## Notes
-
-- Legacy material is removed from active onboarding paths.
-- Integration policy: preserve task-level commit history; do not squash governance rollout branches.
-- Before push/PR automation, verify GitHub auth: `gh auth status -h github.com`.
+- Preserve commit history during merge.
+- Do not squash governance changes.

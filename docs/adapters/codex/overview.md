@@ -1,30 +1,24 @@
 # Codex Adapter Overview
 
-This adapter maps canonical workflow rules into Codex-compatible session behavior.
+This adapter maps shared workflow rules into Codex runtime behavior.
 
-## Canonical Sources
+## Canonical Inputs
 
-Codex must consume shared rules from:
 - `docs/core/principles.md`
 - `docs/process/lifecycle.md`
 - `docs/process/quality-gates.md`
 - `docs/governance/*`
 
-Codex adapter docs describe mapping and install mechanics only.
-
 ## Mapping Rules
 
-- quality-first: no implementation claim without quality gates.
-- evidence-before-claim: every task report includes command evidence.
-- context-budget: batch execution and concise handoff between sessions.
-- parallel-when-safe: parallel reads/checks only for independent tasks.
-- self-improvement-loop: record process improvements in governance docs.
+- Keep core/process definitions shared and unchanged.
+- Use adapter docs only for runtime mapping and setup.
+- Keep VCS automation provider-agnostic (host-detected, minimal toolchain).
 
-## Runtime Mapping
+## Runtime
 
-- Codex runtime instructions live in repository `AGENTS.md` and local adapter docs.
-- Skills are discovered via `~/.agents/skills` and referenced by runtime instructions.
-- This adapter does not fork process rules; it points to shared core/process docs.
+- Codex runtime instructions come from repository guidance + local environment settings.
+- Shared docs are exposed via `~/.agents/skills/devloop`.
 
 ## Verification
 
@@ -32,5 +26,3 @@ Codex adapter docs describe mapping and install mechanics only.
 rg -n "quality-first|evidence-before-claim" docs/adapters/codex
 rg -n "docs/core|docs/process|docs/governance" docs/adapters/codex
 ```
-
-Expected: adapter text references shared rules and source paths explicitly.

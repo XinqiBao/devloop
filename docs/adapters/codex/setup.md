@@ -1,6 +1,6 @@
 # Codex Setup
 
-This setup installs shared skills for Codex while keeping `devloop` as source of truth.
+Install shared workflow docs for Codex without forking rules.
 
 ## Install / Update
 
@@ -10,34 +10,10 @@ From repository root:
 bash scripts/install-codex.sh
 ```
 
-What the installer does:
+Installer behavior:
 1. Ensure `~/.agents/skills` exists.
-2. Create/update symlink:
-   - `~/.agents/skills/devloop -> <repo>/docs`
-3. Print follow-up verification commands.
-
-## GitHub Auth (for push + PR automation)
-
-If this environment needs to push branch changes or open PRs:
-
-```bash
-gh auth status -h github.com
-# if token is invalid/missing:
-gh auth login -h github.com -p https -w
-gh auth setup-git
-```
-
-Notes:
-- HTTPS remotes require valid GitHub credentials (personal access token via helper/OAuth), not account password.
-- In sandboxed/isolated runtimes, host keychain credentials may be unavailable; run auth in your local shell.
-- Re-check with `gh auth status -h github.com` before PR automation.
-
-## Manual Install (fallback)
-
-```bash
-mkdir -p ~/.agents/skills
-ln -sfn "$(pwd)/docs" ~/.agents/skills/devloop
-```
+2. Link `~/.agents/skills/devloop -> <repo>/docs`.
+3. Print verification commands.
 
 ## Verify
 
@@ -45,18 +21,24 @@ ln -sfn "$(pwd)/docs" ~/.agents/skills/devloop
 test -L ~/.agents/skills/devloop && echo "link-ok"
 readlink ~/.agents/skills/devloop
 find -L ~/.agents/skills/devloop -maxdepth 2 -type d | sort
-gh auth status -h github.com
 ```
 
-Expected:
-- Symlink exists and points to current repository `docs` directory.
-- Core/process/adapters/governance directories are discoverable through link.
-- GitHub auth status is valid when push/PR actions are required.
+## VCS Preflight (Provider-Agnostic)
 
-## Local Config References
+For environments that will push branches or open PR/MR:
 
-- Repository-level runtime instructions: `AGENTS.md`
-- Project guidance entry point: `CLAUDE.md`
-- Canonical workflow source: `docs/core`, `docs/process`, `docs/adapters`, `docs/governance`
+```bash
+git remote -v
+command -v gh >/dev/null || command -v glab >/dev/null || true
+```
 
-Keep local config thin: reference canonical docs instead of duplicating policy text.
+Prefer the minimal valid path in current environment:
+- SSH push with plain git when possible
+- Provider CLI when PR/MR creation is required
+- No provider-specific assumptions in base workflow rules
+
+## Local References
+
+- Runtime instructions: `AGENTS.md` (if present in environment)
+- Repository guide: `CLAUDE.md`
+- Canonical source: `docs/core`, `docs/process`, `docs/adapters`, `docs/governance`

@@ -1,28 +1,19 @@
 # devloop
 
-This repository defines workflow governance, not application code.
-Use canonical docs as the only authority.
+This repository contains canonical workflow governance docs for deployment and self-improvement.
 
-## Canonical Sources
+## Canonical Paths
 
-- `docs/core/principles.md`
-- `docs/core/problem-statement.md`
-- `docs/process/lifecycle.md`
-- `docs/process/quality-gates.md`
-- `docs/adapters/claude/overview.md`
-- `docs/adapters/codex/overview.md`
-- `docs/governance/status.md`
-- `docs/governance/decisions.md`
-- `docs/governance/changelog.md`
+- `docs/core/*`
+- `docs/process/*`
+- `docs/adapters/*`
+- `docs/governance/*`
 
-## Execution Rules
+## Rules
 
-- Prefer updating canonical docs over duplicating policy text.
-- Keep adapter docs as mappings; do not redefine core/process rules.
-- Require verification evidence before any completion claim.
-- Preserve commit-level history during integration; default to non-squash merge.
-
-## Implementation Areas
-
-- Claude plugin delivery: `plugins/xdev/`
-- Codex setup/install path: `scripts/install-codex.sh`
+- Keep docs minimal and current.
+- Avoid duplicate policy text.
+- Keep core/process provider-agnostic.
+- Keep adapters as mappings, not rule forks.
+- Require verification evidence before completion claims.
+- Preserve commit-level history in integration.

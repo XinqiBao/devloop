@@ -1,66 +1,43 @@
 # Claude Adapter Overview
 
-This adapter maps the platform-agnostic workflow to Claude-specific delivery and runtime behavior.
+This adapter maps shared workflow docs to Claude runtime usage.
 
-## Canonical Sources
+## Canonical Inputs
 
-Use these documents as the rule source:
 - `docs/core/principles.md`
 - `docs/process/lifecycle.md`
 - `docs/process/quality-gates.md`
 - `docs/governance/*`
 
-The Claude adapter must reference these sources and must not redefine them.
+## Delivery
 
-## Delivery Model
+- Install plugin: `claude plugin install xdev@devloop`
+- Plugin source: `plugins/xdev/`
 
-Claude delivery stays plugin-first:
+## Runtime Boundary
 
-1. Install workflow plugin from repository marketplace:
-   - `claude plugin install xdev@devloop`
-2. Keep universal user-level guidance in dotfiles-managed `~/.claude/CLAUDE.md`.
-3. Keep project-specific constraints in each repository's local `CLAUDE.md` and project `.claude/` settings.
+- User-level guidance remains in user-level Claude config.
+- Repository workflow rules remain in this repository's docs.
+- Adapter text must reference shared rules, not fork them.
 
-## Responsibility Boundary
+## VCS Preflight (Provider-Agnostic)
 
-- `plugins/xdev/` owns Claude skills/hooks/scripts distribution.
-- Dotfiles own cross-project personal policy text.
-- Repository `docs/` own canonical workflow governance and process definitions.
-
-## GitHub Auth Prerequisites (for push/PR flows)
-
-When Claude workflows include `git push` or `gh pr create`, ensure GitHub auth is valid first:
+Before push/PR automation, verify:
 
 ```bash
-gh auth status -h github.com
-# if invalid or missing:
-gh auth login -h github.com -p https -w
-gh auth setup-git
+git remote -v
+command -v gh >/dev/null || command -v glab >/dev/null || true
 ```
 
-If repository remote uses HTTPS, git may prompt for GitHub credentials unless credential helper is configured.
-Prefer GitHub CLI auth + credential helper over manual password entry.
-
-## Merge Strategy Requirement
-
-Integration must preserve task-level commits:
-- Default: merge commit (non-squash)
-- Do not use squash merge for workflow-governance branches
-- Record merge method in verification summary
+Use the simplest valid path in current environment:
+1. SSH + `git push` when available
+2. Provider CLI (`gh`/`glab`) when needed for PR/MR creation
+3. Plain git workflow when provider CLI is unavailable
 
 ## Verification
 
-Run these checks after adapter changes:
-
 ```bash
 claude plugin list | rg xdev || true
-gh auth status -h github.com
 rg -n "quality-first|evidence-before-claim" docs/adapters/claude
 rg -n "docs/core|docs/process|docs/governance" docs/adapters/claude
 ```
-
-Expected:
-- xdev plugin remains installable/listed.
-- GitHub auth is valid before push/PR actions.
-- Adapter references shared principles (quality-first, evidence-before-claim).
-- Canonical source paths are explicit.
