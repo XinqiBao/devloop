@@ -1,9 +1,0 @@
-{
-  "name": "xdev",
-  "version": "2.0.0",
-  "description": "General-purpose AI dev workflow: issue-to-PR SOP, drafting, project setup",
-  "author": {
-    "name": "devloop"
-  },
-  "license": "MIT"
-}
