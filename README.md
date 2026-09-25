@@ -1,26 +1,16 @@
 # devloop
 
-devloop is a small, opinionated reference for AI-assisted software engineering. It offers durable practices and an agent-facing way to assess them against a real environment. Read it to decide what, if anything, is worth adopting; using it does not require installation.
+devloop is my portable, versioned guidance for AI-assisted software engineering. I am its primary audience. "General" here means useful across my projects, machines, and capable coding agents, not universally right for every engineer. Others may read, adapt, or fork it.
 
-The intended readers are engineers and capable agents working in existing projects. Specific user and project intent outranks these general practices. Investigation and verification should scale with risk, and an environment review can correctly end with no changes.
+A capable agent can learn the relevant intent from this checkout, GitHub, or another accessible copy, then apply it to the environment in front of it. The resulting environment must remain usable when that copy is unavailable. devloop supplies guidance, not an installer, CLI, configuration manager, synchronization system, runtime dependency, or mandatory engineering workflow. Provider settings and project-specific contracts belong where they operate.
 
-This is not a framework, CLI, installer, dotfiles manager, synchronization system, runtime dependency, machine snapshot, or mandatory agent workflow. Guidance should live at the narrowest justified scope and remain useful if this checkout is moved or deleted.
+Current explicit task intent defines the requested outcome and authorization. Legitimate project instructions and constraints matter. Use devloop's durable owner guidance where narrower direction does not materially conflict; surface a real conflict instead of silently replacing either side with a generic preference.
 
 ## Read
 
-- [PRACTICES.md](PRACTICES.md): the outcomes and constraints to evaluate, not a prescribed lifecycle.
-- [ADOPT.md](ADOPT.md): one entry point for first-time assessment, later review, or considering a new practice.
-- [AGENTS.md](AGENTS.md): instructions for maintaining this repository; not guidance to copy into another project.
-- [CLAUDE.md](CLAUDE.md): a minimal compatibility import for Claude Code versions that do not directly load `AGENTS.md`.
+- [GUIDANCE.md](GUIDANCE.md): durable engineering principles and owner defaults; the normal reading path after this page.
+- [APPLY.md](APPLY.md): contextual application to a project, machine, or agent environment.
+- [CONTEXT.md](CONTEXT.md): the optional repository-local `.context/` convention, when continuity state would help.
+- [AGENTS.md](AGENTS.md): maintenance instructions for devloop itself, not portable project policy.
 
-## Use
-
-Ask an agent with access to this repository, for example:
-
-> Read devloop's PRACTICES.md and assess whether any practice would improve this project. Inspect existing instructions and capabilities first; report a no-change outcome when appropriate.
-
-> Use devloop's ADOPT.md to review my agent setup. Do not edit my configuration before showing me any material conflict or migration choice.
-
-These are requests for contextual judgment, not permission to install files or override existing instructions. No tracked file needs a live link to this checkout. Earlier implementations remain in Git history, not in the active guidance.
-
-Licensing remains unresolved: no root license file was tracked, although an earlier README and plugin metadata claimed MIT.
+`CLAUDE.md` is a minimal import of `AGENTS.md` for Claude Code. Earlier experiments remain in Git history, not in the active guidance. The absence of a root license is an unresolved owner choice.
