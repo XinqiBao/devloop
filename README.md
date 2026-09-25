@@ -1,16 +1,20 @@
 # devloop
 
-devloop is my portable, versioned guidance for AI-assisted software engineering. I am its primary audience. "General" here means useful across my projects, machines, and capable coding agents, not universally right for every engineer. Others may read, adapt, or fork it.
+devloop is a small, opinionated collection of engineering guidance for AI-assisted software development.
 
-A capable agent can learn the relevant intent from this checkout, GitHub, or another accessible copy, then apply it to the environment in front of it. The resulting environment must remain usable when that copy is unavailable. devloop supplies guidance, not an installer, CLI, configuration manager, synchronization system, runtime dependency, or mandatory engineering workflow. Provider settings and project-specific contracts belong where they operate.
+Clone the repository, start a capable coding agent from its root, and ask it to work with the relevant guidance. For example:
 
-Current explicit task intent defines the requested outcome and authorization. Legitimate project instructions and constraints matter. Use devloop's durable owner guidance where narrower direction does not materially conflict; surface a real conflict instead of silently replacing either side with a generic preference.
+- Review the current engineering environment against devloop and report meaningful gaps.
+- Apply relevant devloop guidance to the current engineering environment.
+- Review and improve devloop's guidance for clarity, consistency, and continued usefulness.
 
-## Read
+## Repository map
 
-- [GUIDANCE.md](GUIDANCE.md): durable engineering principles and owner defaults; the normal reading path after this page.
-- [APPLY.md](APPLY.md): contextual application to a project, machine, or agent environment.
-- [CONTEXT.md](CONTEXT.md): the optional repository-local `.context/` convention, when continuity state would help.
-- [AGENTS.md](AGENTS.md): maintenance instructions for devloop itself, not portable project policy.
+- [Engineering work](guidance/engineering.md): principles for carrying out engineering tasks.
+- [Commits](guidance/commits.md): coherent Git history and contextual workflow choices.
+- [Durable knowledge](guidance/knowledge.md): persistent engineering information.
+- [Working context](guidance/context.md): scope and lifetime of temporary context.
+- [APPLY.md](APPLY.md): how relevant guidance is applied to a real environment.
+- [AGENTS.md](AGENTS.md): instructions for maintaining devloop itself.
 
-`CLAUDE.md` is a minimal import of `AGENTS.md` for Claude Code. Earlier experiments remain in Git history, not in the active guidance. The absence of a root license is an unresolved owner choice.
+`CLAUDE.md` imports `AGENTS.md` for Claude Code. devloop supplies guidance, not a required runtime dependency or workflow tool.

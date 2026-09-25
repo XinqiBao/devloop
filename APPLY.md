@@ -1,9 +1,9 @@
 # Applying devloop
 
-Use this page when bringing my guidance into a project or agent environment, or reconciling an existing one. Application is a contextual task for a capable agent, not an installation or ongoing link to this repository.
+Apply relevant guidance, not devloop's file structure. Its source documents organize ideas for reading; they do not prescribe the target environment's files or configuration.
 
-Read the relevant guidance, inspect the actual environment and its existing instructions, and distinguish portable owner intent from local facts and provider-specific settings. Identify meaningful gaps or conflicts before changing anything. Current task authorization and legitimate project contracts define what can be changed; a real material conflict needs a decision, while ordinary implementation choices can proceed.
+Understand the relevant guidance, the requested adoption intent, and the target environment's existing instructions, capabilities, and legitimate constraints. The request may call for full adoption, selective adoption, or review only. Clarify intent when different interpretations would materially change the result; otherwise proceed with the authorized work. Reconcile genuine conflicts and surface those that remain unresolved.
 
-Make useful authorized changes at the scope where they will be discovered and maintained. A small local adapter may point to self-contained local guidance; native agent configuration owns provider, model, permission, plugin, and tool settings. Do not copy devloop wholesale, require a particular file tree, or introduce version tracking or synchronization. A review can conclude that the environment already works and needs no change.
+Express only the useful semantics in the target's natural, discoverable location. This may mean concise rules in an existing file, several files, native agent configuration, environment-level guidance, or no change when the guidance is already expressed effectively. Keep provider and tool settings in their native configuration. The result must work without access to the devloop checkout.
 
-Check references and, where practical, that the intended agent can discover the resulting guidance. Verify affected behavior and report any remaining uncertainty. The environment must work without access to the devloop checkout.
+Check references and verify, where practical, that the intended agents can discover and use the result. A review-only request can end with findings or a no-change conclusion.
