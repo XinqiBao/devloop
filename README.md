@@ -2,19 +2,25 @@
 
 devloop is a small, opinionated collection of engineering guidance for AI-assisted software development.
 
-Clone the repository, start a capable coding agent from its root, and ask it to work with the relevant guidance. For example:
+It captures recurring engineering judgment that should remain useful across projects and capable coding agents. Project facts and tool configuration belong in the environments where they apply.
 
-- Review the current engineering environment against devloop and report meaningful gaps.
-- Apply relevant devloop guidance to the current engineering environment.
-- Review and improve devloop's guidance for clarity, consistency, and continued usefulness.
+Clone the repository, start a capable coding agent from its root, and give it a relevant task. For example:
 
-## Repository map
+Review an environment:
 
-- [Engineering work](guidance/engineering.md): principles for carrying out engineering tasks.
-- [Commits](guidance/commits.md): coherent Git history and contextual workflow choices.
-- [Durable knowledge](guidance/knowledge.md): persistent engineering information.
-- [Working context](guidance/context.md): scope and lifetime of temporary context.
-- [APPLY.md](APPLY.md): how relevant guidance is applied to a real environment.
-- [AGENTS.md](AGENTS.md): instructions for maintaining devloop itself.
+> Review the current engineering environment against devloop. Report meaningful gaps and conflicts; make no changes.
 
-`CLAUDE.md` imports `AGENTS.md` for Claude Code. devloop supplies guidance, not a required runtime dependency or workflow tool.
+Apply guidance:
+
+> Apply relevant devloop guidance to the current engineering environment. Inspect its existing instructions and conventions first.
+
+Maintain devloop:
+
+> Review and improve devloop's guidance for clarity, consistency, and continued usefulness.
+
+## Repository structure
+
+- [`guidance/`](guidance/): topic-oriented engineering guidance.
+- [APPLY.md](APPLY.md): how to apply relevant guidance to another environment.
+- [AGENTS.md](AGENTS.md): instructions for maintaining devloop.
+- [CLAUDE.md](CLAUDE.md): minimal Claude Code import of `AGENTS.md`.

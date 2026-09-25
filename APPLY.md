@@ -1,9 +1,19 @@
 # Applying devloop
 
-Apply relevant guidance, not devloop's file structure. Its source documents organize ideas for reading; they do not prescribe the target environment's files or configuration.
+Apply relevant guidance, not devloop's file structure. The source documents organize ideas for reading; they do not prescribe the target environment's files or configuration.
 
-Understand the relevant guidance, the requested adoption intent, and the target environment's existing instructions, capabilities, and legitimate constraints. The request may call for full adoption, selective adoption, or review only. Clarify intent when different interpretations would materially change the result; otherwise proceed with the authorized work. Reconcile genuine conflicts and surface those that remain unresolved.
+## Understand the target
 
-Express only the useful semantics in the target's natural, discoverable location. This may mean concise rules in an existing file, several files, native agent configuration, environment-level guidance, or no change when the guidance is already expressed effectively. Keep provider and tool settings in their native configuration. The result must work without access to the devloop checkout.
+Read the relevant guidance and inspect the target's existing instructions, capabilities, and legitimate constraints. Determine whether the request calls for full adoption, selective adoption, or review only.
 
-Check references and verify, where practical, that the intended agents can discover and use the result. A review-only request can end with findings or a no-change conclusion.
+Clarify intent when different interpretations would materially change the result. Reconcile genuine conflicts and surface those that remain unresolved.
+
+## Express the guidance
+
+Keep only the persistent guidance that is useful in the target environment. It may fit in one existing file, several files, native agent configuration, or an environment-level guidance location. It may require no change when already expressed effectively. Put provider and tool settings in their native configuration.
+
+The result must work without access to the devloop checkout.
+
+## Verify the result
+
+Check references and, where practical, confirm that the intended agents can discover and use the guidance. A review-only request can end with findings or a no-change conclusion.
