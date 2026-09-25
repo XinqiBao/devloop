@@ -2,6 +2,8 @@
 
 Working context has a scope and a lifetime. It helps continue work or an investigation while that need remains active. Durable knowledge remains useful after the work ends because it records facts, constraints, or decisions needed later.
 
+Preserve working context when an interruption, handoff, or later return would otherwise lose useful state that is costly or uncertain to reconstruct from code, commits, documentation, or other durable records. Merely doing work or having an open task is not enough reason to create persistent context.
+
 ## Scope
 
 Keep context at the narrowest scope where it remains useful and truthful. Environment-level context may use `~/.context/`; repository-local context may use `<repo>/.context/`; a particular effort may need a narrower location.

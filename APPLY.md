@@ -1,6 +1,8 @@
 # Applying devloop
 
-Apply relevant guidance, not devloop's file structure. The source documents organize ideas for reading; they do not prescribe the target environment's files or configuration.
+Apply relevant guidance, not devloop's file structure. Copying its layout into another environment can create parallel instructions alongside the target's existing ones. If the copies diverge, engineers and agents may not know which rule to follow or where to find the current one.
+
+Integrate useful practices into the target's natural guidance or configuration locations.
 
 ## Understand the target
 

@@ -24,4 +24,4 @@ Leave enough coherent progress and current working state for the work to be unde
 
 ## Prefer judgment and native capability
 
-Use existing tools and capable engineering judgment before adding a rule, script, hook, skill, or dependency. Add a mechanism when a recurring need justifies what it improves and the cost of keeping it correct.
+Use existing tools and engineering judgment before adding a rule, script, hook, skill, abstraction, or dependency. A permanent mechanism becomes something future work must discover, understand, obey, debug, and keep correct. That cost can be worthwhile when the mechanism repeatedly reduces risk, effort, or inconsistency. A one-off inconvenience is usually weak evidence for adding one.

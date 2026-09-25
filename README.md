@@ -4,19 +4,19 @@ devloop is a small, opinionated collection of engineering guidance for AI-assist
 
 It captures recurring engineering judgment that should remain useful across projects and capable coding agents. Project facts and tool configuration belong in the environments where they apply.
 
-Clone the repository, start a capable coding agent from its root, and give it a relevant task. For example:
+Clone the repository, start a capable coding agent from its root, and give it a relevant task. Name the target project or environment in review and apply requests. For example:
 
 Review an environment:
 
-> Review the current engineering environment against devloop. Report meaningful gaps and conflicts; make no changes.
+> Review [target project or environment] against devloop. Report meaningful gaps and conflicts; make no changes.
 
 Apply guidance:
 
-> Apply relevant devloop guidance to the current engineering environment. Inspect its existing instructions and conventions first.
+> Apply relevant devloop guidance to [target project or environment]. Inspect its existing instructions and conventions first.
 
 Maintain devloop:
 
-> Review and improve devloop's guidance for clarity, consistency, and continued usefulness.
+> Review devloop's guidance for material gaps, contradictions, or stale instructions. Make justified changes; a no-change conclusion is valid.
 
 ## Repository structure
 
