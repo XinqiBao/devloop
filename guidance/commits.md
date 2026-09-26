@@ -1,6 +1,6 @@
 # Commits
 
-A commit should represent one coherent engineering purpose. Useful history lets a reader see what changed, why it belonged together, and how behavior evolved.
+A commit should represent one coherent engineering purpose. Useful history lets a reader see what changed, why it belonged together, how behavior evolved, and where a decision or regression entered.
 
 ## Choose boundaries by purpose
 

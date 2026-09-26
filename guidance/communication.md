@@ -6,6 +6,8 @@ Engineering artifacts should let future engineers and agents understand a decisi
 
 Lead with the conclusion or question the reader needs to act on. Expose the reason it follows from the evidence and the assumptions on which it depends. A design note recommending caching, for example, should identify the repeated work it avoids and the amount of stale data the system can tolerate. "Cache for performance" leaves the decision's boundary hidden.
 
+State the concrete problem before introducing abstract terms. Prefer ordinary, precise language unless technical terminology adds useful precision. Keep each sentence focused on one main point so readers need not unpack unrelated ideas at once.
+
 Use a short example when it shows why judgment changes between cases. Remove detail that does not help the reader, but retain reasoning needed to apply or reassess the conclusion. Avoid process narration that makes readers reconstruct the point from the sequence in which the author discovered it.
 
 ## Match form to information

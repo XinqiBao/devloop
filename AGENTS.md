@@ -2,7 +2,7 @@
 
 - Read [README.md](README.md) and the relevant guidance linked there before changing this repository.
 - Keep tracked guidance in English and independent of any particular checkout or agent product. Do not promote private or local context into public truth.
-- Be concise by removing unnecessary material, not necessary reasoning. Make the structure of the engineering judgment visible; use prose, lists, comparisons, or examples where each helps. Follow [Engineering Communication](guidance/communication.md) without imposing a document template.
-- Add persistent guidance only when a recurring need or important judgment boundary justifies its reading and maintenance cost. Prune obsolete material and prefer native capability over unnecessary mechanisms.
+- Be concise by removing unnecessary material, not necessary reasoning. Make the structure of the engineering judgment visible; use prose, lists, comparisons, or examples where each helps. Follow [Engineering Communication](guidance/communication.md) without imposing a document template. Avoid basic-tool tutorials.
+- Add persistent guidance only when a recurring need or important judgment boundary justifies its reading and maintenance cost. Prune obsolete material, but check whether removal would lose useful behavior, discoverability, or engineering meaning. Prefer native capability over unnecessary mechanisms.
 - Strengthen an existing topic before adding a document; split it only when the new topic stands on its own.
 - Review the guidance as a whole for duplication, conflicts, accidental workflow requirements, and stale references. Check that a developing engineer can follow the reasoning and an agent can identify the operative guidance. Review the final diff, links, and affected behavior before claiming completion.
