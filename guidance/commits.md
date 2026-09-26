@@ -1,19 +1,19 @@
 # Commits
 
-Git history is an engineering artifact. Useful history helps a future reader see what changed, why related changes belonged together, and how behavior evolved. It can also help locate where a regression or decision entered the system and, when appropriate, isolate a change for reversal. Not every coherent change can be safely reverted on its own; reversibility informs commit boundaries but does not define them.
+Useful Git history shows what changed, why the changes belong together, and how behavior evolved. It helps locate a regression or past decision. Sometimes it also lets a change be reverted on its own, though not every coherent commit can be safely reverted.
 
-## Group by engineering intent
+## Decide what belongs in one commit
 
-A commit should express one understandable reason for changing the system. File count, edit order, and implementation steps are poor substitutes for that reason. A behavior change, the tests that establish it, and documentation needed to understand it may form one coherent commit across several files. Unrelated cleanup in the same commit obscures both intentions and makes later review harder.
+A commit should have one understandable reason for changing the system. That reason matters more than file count or edit order. A behavior change, its tests, and the documentation needed to understand it often belong together. Unrelated cleanup has a different reason and makes the change harder to review when mixed in.
 
-The opposite mistake is to split one change into commits that only record small steps. When each commit needs the next one to explain its purpose, the history makes readers reconstruct the change instead of showing its intent. Use as many commits as the work needs to leave understandable units, rather than aiming for a particular count.
+Splitting each implementation step can also obscure the reason for the change. If a commit makes sense only after reading the next one, consider grouping them. Use as many commits as needed to leave understandable units.
 
-A preparation refactor may deserve its own commit if it has an independent purpose and can be understood and verified on its own. A small local rearrangement that exists solely to support the behavior change is often clearer with that change. This distinction matters more than whether the refactor happened first.
+A preparatory refactor may deserve its own commit if it can be understood and verified on its own. A small rearrangement that only supports a behavior change is often clearer in the same commit. The reason for the work matters more than the order in which it was done.
 
-## Explain the change
+## Write messages that explain intent
 
-Commit messages should state intent consistently enough to make history readable and scannable. Use Conventional Commits by default as devloop's current convention for that purpose. The format describes a commit; it does not decide what belongs in one.
+Use Conventional Commits by default so history is easy to scan. The format describes a commit; it does not determine its boundary. The message should still explain the change's intent.
 
-Use a commit body when the reason for a particular change would otherwise be hard to recover, such as a surprising tradeoff or rejected alternative. Rationale tied to that historical decision belongs in history. A constraint or decision that future work must routinely know also belongs in the active project location where its readers will find it; a commit message alone is easy to miss.
+Use a commit body when a surprising tradeoff or rejected alternative would otherwise be hard to understand later. History is a good place for the reason behind that past decision. If future work must routinely account for a constraint or decision, also record it where engineers will encounter it during that work. An old commit message is easy to miss.
 
-Choose branches, pull requests, worktrees, merge style, squash decisions, and commit count for the task and repository. Those workflow choices do not replace the goal of leaving understandable engineering history.
+Choose branches, pull requests, worktrees, merge style, and squash decisions for the task and repository. Whatever workflow is used, leave understandable history.

@@ -1,33 +1,33 @@
 # Engineering Work
 
-Good engineering decisions depend on the task's intent, the system as it exists, and the evidence that emerges. The principles below interact throughout a change. They guide judgment; they are not ordered stages or required artifacts.
+Engineering decisions depend on the requested change, the system as it works today, and the evidence found during the work. The guidance below applies throughout a change. It does not prescribe a sequence of steps or required artifacts.
 
-## Work from relevant reality
+## Investigate what matters
 
-Before a consequential change, inspect the behavior, instructions, state, and boundaries that could affect it. A description may be stale, and an architecture inferred from a small part of the code may be wrong. Separate what you observed from what you assume so that an unverified belief does not quietly become the basis for a change.
+Before a consequential change, inspect the affected behavior, instructions, current state, and system boundaries. A description may be stale. A small part of the code may not show how the whole path works. Distinguish what you observed from what you assume before basing a change on it.
 
-Investigation should be proportional to the decision. Greater uncertainty, wider impact, harder reversal, or higher recovery cost call for stronger evidence. A local documentation correction that is easy to undo may need only a targeted read and a link check. A change to shared runtime behavior may require tracing callers, checking integration boundaries, and observing the behavior it will replace. Neither case benefits from reading everything: investigation has a cost, and its purpose is to reduce uncertainty that matters to the decision.
+Investigate more when you are less certain how the system works, the change affects more of it, or failure would be difficult to reverse or recover from. A small documentation correction may need only a targeted read and a link check. Changing shared runtime behavior may require tracing callers, checking integration boundaries, and observing the current behavior. Stop when further investigation is unlikely to change the decision; reading everything also has a cost.
 
-## Preserve intent and authority
+## Know the task and its limits
 
-Keep the requested outcome, authorized scope, legitimate constraints, and meaningful success conditions together. They answer different questions: what should change, what you may change, what limits the solution, and what would count as a satisfactory result. A technically sound change can still be wrong if it solves a different problem or crosses an authority boundary.
+Establish what needs to change, what you are allowed to change, which constraints apply, and how you will know the task is done. These are separate questions. A technically sound solution can still solve the wrong problem or change something outside the authorized scope.
 
-Clarify ambiguity when plausible interpretations would materially change the result, risk, or authority needed. Minor implementation choices within clear bounds usually do not need a handoff. Once the important boundaries are understood, continue through implementation, verification, and ordinary repair. Autonomy does not extend to silently expanding the task: new evidence that changes the intended outcome, scope, or risk may require another decision from the owner.
+Ask for a decision when different interpretations would materially change the result, risk, or authority needed. Make minor implementation choices within clear bounds and carry the work through verification and ordinary repair. If new evidence changes the intended outcome, scope, or risk, revisit the decision with the owner before expanding the task.
 
-## Let evidence revise the work
+## Check what the evidence proves
 
-Choose checks and observations for the claims and risks that matter. A passing unit test supports the behavior it exercises; it does not establish that an integration path works. A successful build establishes that the build succeeded, not that runtime behavior is correct. State conclusions at the same scope as their evidence, including meaningful uncertainty that remains.
+Choose checks that address the important claims and risks. A passing unit test supports the behavior it exercises; it does not prove that an integration path works. A successful build does not prove that runtime behavior is correct. Do not claim more than the evidence shows, and state any remaining uncertainty that matters.
 
-Evidence can change more than the implementation. A failing check, a newly discovered caller, or a contrary runtime observation may invalidate the diagnosis, the plan, or an earlier completion claim. Revisit those conclusions instead of treating them as commitments. Verification is a way to learn whether the intended result holds, not a fixed set of gates to perform after the work.
+A failing check, a newly discovered caller, or a contrary runtime observation may change the diagnosis or the plan. It may also reopen a task previously thought complete. Revise the conclusion when evidence changes. Verification is part of learning whether the intended result holds, not a fixed set of gates at the end.
 
-## Keep substantial work recoverable
+## Keep longer work resumable
 
-Work should remain understandable and resumable if interrupted. For a small change, the code, diff, and history may already show enough. A longer or uncertain effort may need a brief current record of unresolved decisions, important findings, and next useful steps when reconstructing them would be costly or unreliable.
+Leave enough information to resume work after an interruption. For a small change, the code, diff, and history may already be enough. For longer or uncertain work, record unresolved decisions, important findings, and next steps if reconstructing them later would be costly or unreliable.
 
-Preserve only the state that continuity needs, and revise it when evidence changes. Plans and progress notes are aids, not required deliverables. [Working context](context.md) explains when temporary state deserves its own place and when it should be retired.
+Keep that record current and limited to what resuming the work requires. Plans and progress notes are aids, not required deliverables. [Working context](context.md) explains when temporary state deserves its own place and when to retire it.
 
-## Prefer judgment and native capability
+## Add mechanisms when they earn their cost
 
-Before adding a rule, script, hook, skill, abstraction, dependency, or other persistent mechanism, consider whether existing tools and informed judgment already handle the need. A new mechanism becomes part of the engineering surface: future contributors must find it, understand it, follow it, debug it, and keep it correct as the environment changes.
+Before adding a rule, script, hook, skill, abstraction, or dependency, check whether existing tools and engineering judgment already meet the need. Every new mechanism requires future contributors to find, understand, debug, and maintain it.
 
-That cost can be justified. A recurring problem that repeatedly causes errors or inconsistent work may warrant automation or a durable rule, especially when the mechanism reliably reduces the burden. A one-off inconvenience gives weaker evidence. Judge a mechanism by the benefit it continues to provide relative to its ongoing cost, not by whether automation or simplicity is inherently preferable.
+That cost may be worthwhile when a recurring problem causes errors or inconsistent work and a mechanism reliably reduces the burden. A one-off inconvenience is weaker evidence. Compare the continuing benefit with the cost of keeping the mechanism useful as the system changes.

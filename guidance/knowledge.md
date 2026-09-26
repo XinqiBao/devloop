@@ -1,19 +1,19 @@
 # Durable Knowledge
 
-Investigation can produce many observations, hypotheses, and explanations, especially during AI-assisted work. Only some of that material should remain after the task. Preserve information when losing it would make future engineering meaningfully harder, less reliable, or more likely to repeat avoidable investigation.
+An investigation may leave many observations, hypotheses, and explanations. Future work needs only some of them. Keep information when losing it would make a later decision harder, less reliable, or require repeating an investigation.
 
-## Keep what future work needs
+## Decide what to keep
 
-Durable information may include a constraint, decision, non-obvious rationale, recurring lesson, important evidence, exact identifier, provenance, or meaningful remaining uncertainty. These are possibilities, not fields to fill in. Record enough for a future reader to use and, when necessary, evaluate the conclusion. A bare conclusion can be misleading when its evidence or scope is essential to judging whether it still applies.
+Keep the constraints, decisions, and non-obvious reasons that later work will need. Evidence, exact identifiers, provenance, and unresolved uncertainty also matter when they help a reader apply or reassess a conclusion. These are examples, not fields to fill in. A conclusion without its scope or supporting evidence can mislead the next person who uses it.
 
-Put knowledge where its likely reader will look while making the relevant decision: near the code, interface, or project guidance it concerns. For example, an API constraint kept only in an old commit message is easy to miss during later API work. Express the current constraint near the interface, with a link to historical rationale if that history matters. There is no need for one central home for every kind of knowledge.
+Put each fact where a reader will look while making the relevant decision: near the code, interface, or project guidance it concerns. An API constraint kept only in an old commit message is easy to miss during later API work. State the current constraint near the interface and link to the history if its rationale matters. Different kinds of knowledge need not share one central home.
 
-## Keep authority clear
+## Give each fact a clear home
 
-Avoid copying the same authoritative project fact across guidance layers. Copies can drift as the project changes; once they disagree, engineers and agents must decide which to trust. Keep the fact in its natural authoritative location and refer to it elsewhere when another entry point needs to make it discoverable. Scope claims carefully so a local observation does not become an unsupported project-wide rule.
+Keep a project fact in the place responsible for it. Copies in several guidance files can drift; conflicting versions leave readers unsure which to trust. Link to the fact from other entry points when needed. Also state its scope: an observation about one module does not establish a rule for the whole project.
 
-## Distill investigation
+## Keep conclusions, not a transcript
 
-While work is active, raw observations, failed approaches, hypotheses, prompts, and intermediate reasoning may help continuity. When the work ends, keep the conclusions, constraints, rationale, evidence, provenance, and unresolved questions that future work actually needs. A failed approach may be worth recording if its reason for failure would otherwise be rediscovered. Retire the rest rather than preserving a transcript because it exists. [Working context](context.md) covers temporary continuity state while an effort remains active.
+Raw observations, failed approaches, and hypotheses may help while work is active. Once it ends, retain the conclusions and supporting detail that future work needs. Keep a failed approach when later work is likely to try it again without knowing why it failed. Retire the rest. [Working context](context.md) covers temporary state while work is active.
 
-Keep tracked engineering artifacts direct, concise, and in English by default, subject to explicit task intent and legitimate project conventions. Concision means removing material that does not help the reader, not stripping out reasoning needed to apply the guidance. Routine prompt residue, agent narration, and automatic AI or tool attribution usually add little. Preserve them when they affect a decision, provenance, reproducibility, or future interpretation.
+[Engineering communication](communication.md) covers how to present the information that remains, whether it is durable or temporary.
