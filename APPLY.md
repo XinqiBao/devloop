@@ -1,6 +1,6 @@
 # Applying devloop
 
-Use devloop as a reference when configuring a new or existing development environment. When changes are needed, put the guidance in that environment's own files so its engineers and agents do not need this checkout.
+Use devloop as a reference when configuring a new or existing development environment. When changes are needed, put engineering guidance in that environment's own files and tool preferences in native configuration so neither depends on this checkout at runtime.
 
 ## Inspect effective guidance
 
@@ -19,10 +19,10 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant judgments in devloop:
+Compare what the target already uses with the relevant judgments and optional tool preferences in devloop:
 
-- Add guidance where the target has a real gap.
-- Keep existing guidance when it already covers the decision.
+- Add guidance or tool preferences where the target has a real gap.
+- Keep existing behavior when it already covers the need.
 - Do not copy devloop's document layout to signal completeness.
 
 A review may end with no changes.
@@ -40,5 +40,6 @@ After deployment, check:
 - Each intended agent can reach the guidance through its normal read path.
 - Engineers can find the authoritative source without this checkout.
 - Instructions do not conflict or duplicate policy, and references resolve.
+- Applied tool preferences work in the intended clients.
 
 Report what was verified and what remains uncertain.
