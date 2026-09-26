@@ -1,19 +1,44 @@
 # Applying devloop
 
-Apply relevant engineering meaning in the target environment's own terms and locations. Its engineers and agents should be able to use the result without this checkout.
+Use devloop as a reference when configuring a new or existing development environment. When changes are needed, put the guidance in that environment's own files so its engineers and agents do not need this checkout.
 
-## Decide what applies
+## Inspect effective guidance
 
-Inspect the target's existing instructions, conventions, tools, and constraints. Identify the guidance already present and the legitimate requirements that govern any change. A review may end with findings only; no change is needed when the relevant judgment is already clear.
+Identify the agents and work the environment must support. Trace each agent's normal instruction path, including referenced files and source precedence. If the path is unclear, check the agent's documentation or a representative session.
 
-For environment-wide work, follow the operative path across user-level guidance, agent entry points, relevant native configuration, and project-level constraints that affect the decision. Scope the inspection by relevance rather than surveying every project.
+Keep each source within its scope:
 
-Select guidance for the target's needs, even when the request calls for broad adoption. Copying devloop's document layout can create a parallel source of authority without improving the target.
+| Source | How to use it |
+| --- | --- |
+| User-level entry points and referenced guidance | Follow the intended agents' user-level read path; this guidance may apply across projects. |
+| Native agent configuration | Inspect relevant provider and tool settings in their native location. |
+| Project instructions | Constrain work in that project. Inspect them when the project is a target, without promoting them to environment-wide policy. |
+| Other checkouts, templates, and old files | Treat as reference material only when relevant. Their presence gives them no authority over the environment. |
 
-## Use the target's authority
+Finding a file does not authorize editing it. For environment-wide work, do not survey unrelated repositories to infer user-level policy.
 
-Put missing guidance where its readers already look, such as existing user-level guidance, project guidance, or native agent entry points. Keep provider and tool settings in their native locations. Reconcile differences when both requirements can be met. Ask the owner to decide when legitimate requirements conflict or a choice would materially change the intended behavior.
+## Decide what to apply
+
+Compare what the target already uses with the relevant judgments in devloop:
+
+- Add guidance where the target has a real gap.
+- Keep existing guidance when it already covers the decision.
+- Do not copy devloop's document layout to signal completeness.
+
+A review may end with no changes.
+
+## Choose deployment files
+
+Put guidance where its intended readers already look. Keep provider and tool settings in native configuration. Meet compatible existing requirements; ask the owner to choose when requirements conflict or a choice would materially change the outcome.
+
+Several agents may share one guidance file through short native entry points. Split content when readers, scopes, or maintenance needs differ enough to justify another file. Choose directory, linkage, and file count for the target environment.
 
 ## Check the result
 
-Check for conflicting or duplicate guidance, broken references, and dependencies on this checkout. Trace the target's effective read path to confirm its agents can use the result without devloop and its engineers can find it.
+After deployment, check:
+
+- Each intended agent can reach the guidance through its normal read path.
+- Engineers can find the authoritative source without this checkout.
+- Instructions do not conflict or duplicate policy, and references resolve.
+
+Report what was verified and what remains uncertain.

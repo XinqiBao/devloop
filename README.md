@@ -1,25 +1,21 @@
 # devloop
 
-devloop is a small, opinionated collection of portable engineering guidance for AI-assisted software development. It is a reference for coding agents, engineers at different experience levels, and future maintainers reassessing the decisions behind it. Project facts and tool settings belong in the environments where they apply.
+devloop is a focused, opinionated engineering reference for AI-assisted software development. Coding agents and engineers use it to make decisions; future maintainers use it to reassess them. Project facts and tool settings belong in the environments where they apply.
 
 ## Use with an agent
 
-Give a capable coding agent access to devloop while it works in the development environment being assessed. These requests can be used as written:
+Give a coding agent access to devloop in the environment being assessed. These requests point to the documents that contain the actual guidance:
 
 **Apply to a development environment**
 
 ```text
-Read devloop's APPLY.md and relevant guidance. Apply useful engineering judgments to this development environment, whether it is new or already has guidance.
-Inspect its effective user-level guidance, agent entry points, relevant native configuration, and project-level constraints where they affect the environment. Use the environment's authoritative locations and resolve compatible differences.
-Check for conflicts, duplication, and broken references. Verify agents and engineers can use the result without access to devloop. A no-change conclusion is valid.
+Read devloop's APPLY.md and relevant guidance. Apply the relevant guidance to this development environment, then report the result and how you checked it. A no-change result is valid.
 ```
 
 **Extract guidance into devloop**
 
 ```text
-Inspect this development environment's effective guidance, including user-level instructions, agent entry points, relevant native configuration, and project-level constraints where they reveal reusable judgments.
-Read devloop's AGENTS.md and compare candidates with its existing guidance. Add only portable judgments addressing a recurring need or important judgment boundary whose benefit justifies their maintenance cost. Keep local facts, private context, and tool settings out of devloop.
-Review the guidance as a whole and the final diff for duplication, conflicts, and lost reasoning; a no-change conclusion is valid.
+Read devloop's AGENTS.md and relevant guidance. Assess whether this development environment reveals reusable engineering judgments missing from devloop. Make warranted changes and report the result. A no-change result is valid.
 ```
 
 [Applying devloop](APPLY.md) explains how to use the guidance in a target environment. [Maintaining devloop](AGENTS.md) covers changes to this repository.
