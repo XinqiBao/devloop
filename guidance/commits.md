@@ -1,6 +1,6 @@
 # Commits
 
-A commit should represent one coherent engineering purpose. Useful history lets a reader see what changed, why it belonged together, how behavior evolved, and where a decision or regression entered.
+A commit should represent one coherent engineering purpose. History should show what changed, why the changes belong together, how behavior evolved, and where a decision or regression entered.
 
 ## Choose boundaries by purpose
 
@@ -13,9 +13,11 @@ File count and edit order do not identify a purpose. Use the number of commits t
 
 ## Explain intent in the message
 
-Use Conventional Commits by default to make history easy to scan. The format describes a commit; it does not decide its boundary. State the intent in the message, and add a body when a surprising tradeoff or rejected alternative would otherwise be hard to recover.
+Use Conventional Commits by default so history is easy to scan. The format describes a commit; it does not decide its boundary.
 
-History can preserve why a past change was made. A constraint or decision that future work must routinely account for also belongs where that work happens; an old commit message is too easy to miss. [Durable Knowledge](knowledge.md) covers that placement.
+State the intent in the subject. Add a body when a surprising tradeoff or rejected alternative would otherwise be hard to recover.
+
+History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. [Durable Knowledge](knowledge.md) covers that placement.
 
 ## Choose workflow for the repository
 

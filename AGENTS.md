@@ -1,8 +1,27 @@
 # Maintaining devloop
 
-- Read [README.md](README.md) and the relevant guidance linked there before changing this repository.
-- Keep tracked guidance in English and independent of any particular checkout or agent product. Do not promote private or local context into public truth.
-- Be concise by removing unnecessary material, not necessary reasoning. Make the structure of the engineering judgment visible; use prose, lists, comparisons, or examples where each helps. Follow [Engineering Communication](guidance/communication.md) without imposing a document template. Avoid basic-tool tutorials.
-- Add persistent guidance only when a recurring need or important judgment boundary justifies its reading and maintenance cost. Prune obsolete material, but check whether removal would lose useful behavior, discoverability, or engineering meaning. Prefer native capability over unnecessary mechanisms.
-- Strengthen an existing topic before adding a document; split it only when the new topic stands on its own.
-- Review the guidance as a whole for duplication, conflicts, accidental workflow requirements, and stale references. Check that a developing engineer can follow the reasoning and an agent can identify the operative guidance. Review the final diff, links, and affected behavior before claiming completion.
+Read [README.md](README.md) and the relevant guidance before changing this repository.
+
+## Scope and selection
+
+Keep tracked guidance in English and independent of any checkout or agent product. Do not present private context, local settings, or repository-specific rules as portable guidance.
+
+When extracting from an environment:
+
+- Examine only guidance that applies to the work in scope.
+- Compare candidate judgments with existing devloop topics.
+- Add guidance only for a recurring need or important decision boundary whose benefit justifies its maintenance cost. Prefer native capability over unnecessary mechanisms.
+
+Strengthen an existing topic before adding a document. Split a topic only when its audience or decisions warrant a separate read path. Prune obsolete material after checking what useful reasoning or behavior would be lost.
+
+## Writing and review
+
+Write direct engineering guidance. Remove unnecessary material, but keep the reasoning needed to apply a judgment.
+
+Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Engineering Communication](guidance/communication.md) without imposing a template or teaching basic tools.
+
+Before claiming completion:
+
+- Review the guidance as a whole for duplication, conflicts, accidental workflow requirements, and stale references.
+- Check that an engineer can follow the reasoning and an agent can identify the operative guidance.
+- Review the final diff, links, and affected behavior.
