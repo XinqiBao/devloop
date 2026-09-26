@@ -4,27 +4,22 @@ devloop is a small, opinionated collection of portable engineering guidance for 
 
 ## Use with an agent
 
-Give a capable coding agent access to devloop. For review or application, work in the target project or environment; for maintenance, work in this repository. These requests can be used as written:
+Give a capable coding agent access to devloop while it works in the development environment being assessed. These requests can be used as written:
 
-**Review without changes**
+**Apply to a development environment**
 
 ```text
-Review this project or environment against the relevant devloop guidance.
-Report meaningful gaps and conflicts; make no changes.
+Read devloop's APPLY.md and relevant guidance. Apply useful engineering judgments to this development environment, whether it is new or already has guidance.
+Inspect its effective user-level guidance, agent entry points, relevant native configuration, and project-level constraints where they affect the environment. Use the environment's authoritative locations and resolve compatible differences.
+Check for conflicts, duplication, and broken references. Verify agents and engineers can use the result without access to devloop. A no-change conclusion is valid.
 ```
 
-**Apply guidance**
+**Extract guidance into devloop**
 
 ```text
-Apply relevant devloop guidance to this project or environment.
-Inspect its existing instructions and conventions first.
-```
-
-**Maintain devloop**
-
-```text
-Review devloop's guidance for meaningful gaps, contradictions, or stale instructions.
-Make justified changes; a no-change conclusion is valid.
+Inspect this development environment's effective guidance, including user-level instructions, agent entry points, relevant native configuration, and project-level constraints where they reveal reusable judgments.
+Read devloop's AGENTS.md and compare candidates with its existing guidance. Add only portable judgments addressing a recurring need or important judgment boundary whose benefit justifies their maintenance cost. Keep local facts, private context, and tool settings out of devloop.
+Review the guidance as a whole and the final diff for duplication, conflicts, and lost reasoning; a no-change conclusion is valid.
 ```
 
 [Applying devloop](APPLY.md) explains how to use the guidance in a target environment. [Maintaining devloop](AGENTS.md) covers changes to this repository.
