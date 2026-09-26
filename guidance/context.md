@@ -1,17 +1,15 @@
 # Working Context
 
-An interruption or later return can lose useful state that is not yet in code or durable project records. Working context preserves that state while work is active. Use it when reconstructing the state later would be costly, uncertain, or likely to miss something important.
+Working context preserves useful state that is not yet in code or durable project records. Use it when an interruption or later return would make that state costly, uncertain, or unreliable to reconstruct. It is optional: a small change clear from its diff may need no extra record, while a multi-day investigation with unresolved hypotheses and a next validation step may benefit from a short note. An open task alone does not justify a persistent note.
 
-A small change whose state is clear from the diff may need no extra record. A multi-day investigation with unresolved hypotheses, eliminated approaches, and a next meaningful validation step may benefit from a short working note. Having an open task alone does not justify persistent context.
+## Scope and authority
 
-## Scope
+Keep context at the narrowest scope where it remains useful and truthful. A local assumption placed in environment-wide guidance can appear to govern unrelated work. Environment-level context may use `~/.context/`; repository-local context may use `<repo>/.context/`; a specific effort may use a narrower location. These are possible locations, not a required layout.
 
-Keep context at the narrowest scope where it remains useful and truthful. A local assumption placed in environment-wide guidance can appear to govern unrelated work. Environment-level context may use `~/.context/`; repository-local context may use `<repo>/.context/`; a specific effort may use a narrower location. These are optional conventions, not required destinations or a prescribed directory layout.
+Working context is subordinate to tracked project truth. Check it against the present environment before relying on it, especially after an interruption. A stale assumption, plan, or unresolved issue can misdirect later work.
 
-## Lifetime and authority
+## Retire or promote
 
-Working context should describe current state. Check it against the present environment before relying on it, especially after an interruption. An outdated assumption, plan, or unresolved issue can mislead the next person who reads it.
+Keep working context current while it helps continuity. When that need ends, remove it from the active path. Distill any lasting conclusion into its proper durable location using [Durable Knowledge](knowledge.md); do not leave a second authority for project facts.
 
-When its continuity value ends, remove or retire it from the active path. Distill anything that remains useful into the appropriate durable location, using the judgment in [Durable Knowledge](knowledge.md). Working context is subordinate to tracked project truth; it should not become a second authority for project facts.
-
-Do not use `.context/` as a prompt, transcript, or routine report archive, a duplicate home for durable facts, a secret store, or a backup system. Ignored files are not automatically secret or durable. Store secrets appropriately and preserve irreplaceable information in an appropriate durable location.
+Do not use `.context/` as a prompt or transcript archive, a routine report store, a duplicate home for durable facts, a secret store, or a backup system. Ignored files are not automatically secret or durable; store secrets and irreplaceable information in appropriate locations.
