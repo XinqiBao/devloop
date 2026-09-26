@@ -1,27 +1,33 @@
 # Engineering Work
 
-Engineering decisions should follow the task's intent, the system's actual behavior, and the evidence that emerges. The principles below guide judgment rather than prescribe a sequence of steps.
+Good engineering decisions depend on the task's intent, the system as it exists, and the evidence that emerges. The principles below interact throughout a change. They guide judgment; they are not ordered stages or required artifacts.
 
 ## Work from relevant reality
 
-Inspect the affected behavior, instructions, state, and boundaries before consequential changes. Distinguish what was observed from what is assumed.
+Before a consequential change, inspect the behavior, instructions, state, and boundaries that could affect it. A description may be stale, and an architecture inferred from a small part of the code may be wrong. Separate what you observed from what you assume so that an unverified belief does not quietly become the basis for a change.
 
-A small, reversible change may need only a few targeted checks; higher uncertainty, impact, or recovery cost calls for deeper investigation. The aim is enough evidence for the decision, not exhaustive reading.
+Investigation should be proportional to the decision. Greater uncertainty, wider impact, harder reversal, or higher recovery cost call for stronger evidence. A local documentation correction that is easy to undo may need only a targeted read and a link check. A change to shared runtime behavior may require tracing callers, checking integration boundaries, and observing the behavior it will replace. Neither case benefits from reading everything: investigation has a cost, and its purpose is to reduce uncertainty that matters to the decision.
 
 ## Preserve intent and authority
 
-Keep the requested outcome, authorized scope, legitimate constraints, and meaningful success conditions in view. Clarify ambiguity that could change the result or exceed authority.
+Keep the requested outcome, authorized scope, legitimate constraints, and meaningful success conditions together. They answer different questions: what should change, what you may change, what limits the solution, and what would count as a satisfactory result. A technically sound change can still be wrong if it solves a different problem or crosses an authority boundary.
 
-Once these are clear, continue through implementation, verification, and ordinary repair without routine handoffs. Surface a material change in risk or intent rather than silently redefining the task.
+Clarify ambiguity when plausible interpretations would materially change the result, risk, or authority needed. Minor implementation choices within clear bounds usually do not need a handoff. Once the important boundaries are understood, continue through implementation, verification, and ordinary repair. Autonomy does not extend to silently expanding the task: new evidence that changes the intended outcome, scope, or risk may require another decision from the owner.
 
 ## Let evidence revise the work
 
-Choose tests, review, and observations that address the change's meaningful risks. A passing check supports only what it actually covers; a failing check or contrary observation may require revising the plan or reopening a previous conclusion. Explain remaining uncertainty when claiming completion.
+Choose checks and observations for the claims and risks that matter. A passing unit test supports the behavior it exercises; it does not establish that an integration path works. A successful build establishes that the build succeeded, not that runtime behavior is correct. State conclusions at the same scope as their evidence, including meaningful uncertainty that remains.
+
+Evidence can change more than the implementation. A failing check, a newly discovered caller, or a contrary runtime observation may invalidate the diagnosis, the plan, or an earlier completion claim. Revisit those conclusions instead of treating them as commitments. Verification is a way to learn whether the intended result holds, not a fixed set of gates to perform after the work.
 
 ## Keep substantial work recoverable
 
-Leave enough coherent progress and current working state for the work to be understood and resumed after an interruption. A short change may need none beyond the code and commit history; longer work may need a brief record of open decisions and next steps. Plans and progress files are aids when needed, not required artifacts.
+Work should remain understandable and resumable if interrupted. For a small change, the code, diff, and history may already show enough. A longer or uncertain effort may need a brief current record of unresolved decisions, important findings, and next useful steps when reconstructing them would be costly or unreliable.
+
+Preserve only the state that continuity needs, and revise it when evidence changes. Plans and progress notes are aids, not required deliverables. [Working context](context.md) explains when temporary state deserves its own place and when it should be retired.
 
 ## Prefer judgment and native capability
 
-Use existing tools and engineering judgment before adding a rule, script, hook, skill, abstraction, or dependency. A permanent mechanism becomes something future work must discover, understand, obey, debug, and keep correct. That cost can be worthwhile when the mechanism repeatedly reduces risk, effort, or inconsistency. A one-off inconvenience is usually weak evidence for adding one.
+Before adding a rule, script, hook, skill, abstraction, dependency, or other persistent mechanism, consider whether existing tools and informed judgment already handle the need. A new mechanism becomes part of the engineering surface: future contributors must find it, understand it, follow it, debug it, and keep it correct as the environment changes.
+
+That cost can be justified. A recurring problem that repeatedly causes errors or inconsistent work may warrant automation or a durable rule, especially when the mechanism reliably reduces the burden. A one-off inconvenience gives weaker evidence. Judge a mechanism by the benefit it continues to provide relative to its ongoing cost, not by whether automation or simplicity is inherently preferable.

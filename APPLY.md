@@ -1,21 +1,19 @@
 # Applying devloop
 
-Apply relevant guidance, not devloop's file structure. Copying its layout into another environment can create parallel instructions alongside the target's existing ones. If the copies diverge, engineers and agents may not know which rule to follow or where to find the current one.
-
-Integrate useful practices into the target's natural guidance or configuration locations.
+Apply the engineering judgment relevant to the target environment, not devloop's file layout. The result should make sense to that environment's engineers and agents without access to this checkout.
 
 ## Understand the target
 
-Read the relevant guidance and inspect the target's existing instructions, capabilities, and legitimate constraints. Determine whether the request calls for full adoption, selective adoption, or review only.
+Inspect the target's existing instructions, conventions, native capabilities, and legitimate constraints. They show where guidance already works, where a gap exists, and which authority governs the decision. Adding a parallel devloop-shaped layer where the same judgment is already expressed can create conflicting instructions and make the current source harder to find.
 
-Clarify intent when different interpretations would materially change the result. Reconcile genuine conflicts and surface those that remain unresolved.
+Determine whether the task calls for a review, selective application, or broader adoption. Full adoption means the relevant principles are effectively represented, not that the target mirrors this repository. A review may end in findings, and no change may be the right conclusion when the target already expresses the relevant judgment well.
 
 ## Express the guidance
 
-Keep only the persistent guidance that is useful in the target environment. It may fit in one existing file, several files, native agent configuration, or an environment-level guidance location. It may require no change when already expressed effectively. Put provider and tool settings in their native configuration.
+Put a missing principle where its intended readers will naturally find and use it. That may be an existing project guidance file, native agent configuration, or several existing locations with distinct responsibilities. For example, if engineers and agents already consult a project guidance file, add a missing engineering principle there rather than creating a parallel devloop directory. Keep provider and tool settings in their native configuration.
 
-The result must work without access to the devloop checkout.
+Select only the guidance that fits the target's needs and authority. Reconcile differences when both intents can be preserved. When two legitimate requirements cannot both be satisfied, or the choice would materially change the intended behavior, surface the conflict for an owner decision rather than silently overriding target-specific direction.
 
-## Verify the result
+## Check the result
 
-Check references and, where practical, confirm that the intended agents can discover and use the guidance. A review-only request can end with findings or a no-change conclusion.
+Review the resulting guidance for conflicts, duplication, and references to this checkout. Check links and, where practical, confirm that its intended readers or agents can discover and use it.
