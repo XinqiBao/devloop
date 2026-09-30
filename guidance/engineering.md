@@ -4,7 +4,7 @@ Engineering decisions depend on the requested change, the system as it works now
 
 ## Investigate in proportion to the decision
 
-Inspect the affected behavior, instructions, state, and system boundaries before a consequential change. Separate observations from assumptions. A task description may be stale, and a local view of the code may miss an important caller or constraint.
+Inspect the affected behavior, instructions, state, and system boundaries before a consequential change. In an existing workspace, identify work already in progress before editing so you do not overwrite, revert, or include it in your change. Separate observations from assumptions. A task description may be stale, and a local view of the code may miss an important caller or constraint.
 
 The case for further investigation grows with:
 
@@ -37,12 +37,12 @@ A technically sound change can still solve the wrong problem or exceed the autho
 
 ## Match claims to evidence
 
-Evidence supports only what it actually checks. Choose observations and checks for the claims and risks that matter:
+Evidence supports only what it actually checks. Choose the least costly checks or observations that cover the relevant failure risk:
 
 - A passing unit test supports the behavior it exercises; it does not establish that an integration path works.
 - A successful build establishes that the build succeeds; it does not establish correct runtime behavior.
 
-State completion and remaining uncertainty at the scope the evidence permits. If a check fails, a new caller appears, or runtime behavior contradicts the diagnosis, revise the plan, implementation, or completion claim.
+Report what you checked, what relevant behavior remains unchecked, and any material uncertainty. Claim completion only at the scope the evidence supports. If a check fails, a new caller appears, or runtime behavior contradicts the diagnosis, revise the plan, implementation, or completion claim.
 
 Verification checks whether the result holds; it is not a fixed set of gates.
 

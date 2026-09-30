@@ -1,6 +1,6 @@
 # devloop
 
-devloop is a focused, opinionated reference for AI-assisted software development. It holds reusable engineering judgments and optional agent-tool preferences. Coding agents and engineers use it to make decisions; future maintainers use it to reassess them. Project facts and effective tool settings belong in the environments where they apply.
+devloop is a small, portable, versioned engineering reference for the owner and coding agents working across the owner's projects. It preserves opinionated engineering defaults, practices, and judgment, plus optional agent-tool preferences; these are not universal rules. Project facts and effective tool settings belong in the environments where they apply.
 
 ## Use with an agent
 
@@ -15,7 +15,7 @@ Read devloop's APPLY.md and relevant guidance and tool preferences. Apply what i
 **Extract guidance into devloop**
 
 ```text
-Read devloop's AGENTS.md and relevant material. Assess whether this development environment reveals reusable engineering judgments or tool preferences missing from devloop. Make warranted changes and report the result. A no-change result is valid.
+Read devloop's AGENTS.md and relevant guidance. Inspect relevant engineering behavior and, where useful, history for recurring owner defaults, practices, judgments, or tool preferences worth carrying across projects or environments. Distinguish intentional owner choices from project or organization requirements, tool or machine constraints, and one-off behavior; report uncertain intent as a candidate. Compare candidates with devloop, strengthen existing guidance where possible, and make only warranted changes. Keep investigation proportional. No worthwhile new guidance is a valid result.
 ```
 
 [Applying devloop](APPLY.md) explains how to use the guidance in a target environment. [Maintaining devloop](AGENTS.md) covers changes to this repository.

@@ -8,9 +8,9 @@ Keep tracked material in English. Keep general engineering guidance independent 
 
 When extracting from an environment:
 
-- Examine only material that applies to the work in scope.
-- Compare candidate judgments and preferences with existing devloop topics.
-- Add material only for a recurring need or important decision boundary whose benefit justifies its maintenance cost. Prefer native capability over unnecessary mechanisms.
+- Examine relevant behavior, guidance, and history only as far as the candidate warrants.
+- Compare candidate defaults, practices, judgments, and preferences with existing devloop topics.
+- Add material only when there is reason to treat it as an intentional owner choice that recurs across projects or environments and would materially change future engineering behavior. Observed behavior alone is a candidate, not a preference. Prefer native capability over unnecessary mechanisms.
 
 Strengthen an existing topic before adding a document. Split a topic only when its audience or decisions warrant a separate read path. Prune obsolete material after checking what useful reasoning or behavior would be lost.
 
