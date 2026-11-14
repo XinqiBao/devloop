@@ -4,7 +4,7 @@ Read [README.md](README.md) and the relevant guidance before changing this repos
 
 Keep guidance used during engineering work in `plugins/devloop/skills/`, including personal preferences that apply at a particular decision. Keep setup-only tool preferences in `plugins/devloop/preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
 
-For marketplace and payload layout, follow the official [marketplace setup](https://code.claude.com/docs/en/plugins/create-marketplace#create-a-marketplace) and [plugin standard layout](https://code.claude.com/docs/en/plugins/manifest-reference#standard-layout).
+For marketplace and payload layout, follow the official [marketplace setup](https://code.claude.com/docs/en/plugins/create-marketplace#create-a-marketplace) and [plugin standard layout](https://code.claude.com/docs/en/plugins/manifest-reference#standard-layout). Claude Code is the primary delivery target. Keep Codex-specific workarounds in the target environment rather than reshaping the package around them.
 
 ## Scope and selection
 

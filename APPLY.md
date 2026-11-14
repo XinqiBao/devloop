@@ -1,6 +1,6 @@
 # Applying devloop
 
-Use devloop when configuring a new or existing development environment. Install the plugin through the client's native manager and keep effective tool settings in native configuration, so neither depends on this development checkout at runtime. This is an owner-initiated task; use the prompt in [README.md](README.md).
+Use devloop when configuring a new or existing development environment. Prefer the client's native plugin manager and keep effective tool settings in native configuration, so neither depends on this development checkout at runtime. Claude Code defines the package conventions; other clients may need local adaptation. This is an owner-initiated task; use the prompt in [README.md](README.md).
 
 ## Inspect effective guidance
 
@@ -35,9 +35,9 @@ Several agents may share one guidance file through short native entry points. Sp
 
 Keep the payload's skill sources together with their references. Arrange for `engineering` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
 
-## Install the shared package
+## Install the plugin
 
-The marketplace is defined in `.claude-plugin/`; the plugin payload is under `plugins/devloop/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
+The marketplace is defined in `.claude-plugin/`; the plugin payload is under `plugins/devloop/`. Install `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Reconcile an existing source with the same name and keep installation and updates managed by the client.
 
 ### Claude Code
 
@@ -47,9 +47,11 @@ Reconcile superseded personal guidance when enabling the plugin. Preserve unrela
 
 ### Codex
 
-Codex discovers the same skills from the installed package and runs the same `SessionStart` hook. Review and trust the plugin hook before relying on automatic injection: Codex reports new or changed hooks at session start, and `/hooks` shows the same review. Trust is required again after the hook changes. The hook can run outside the sandbox after trust; reserve `--dangerously-bypass-hook-trust` for automation that already vets the plugin.
+Where supported, Codex's native plugin manager discovers the same skills and `SessionStart` hook. Review and trust the plugin hook before relying on automatic injection: Codex reports new or changed hooks at session start, and `/hooks` shows the same review. Changed plugin content can require trust again. The hook can run outside the sandbox after trust; reserve `--dangerously-bypass-hook-trust` for automation that already vets the plugin.
 
-Verify that the `devloop:*` skills are discoverable and that the engineering defaults are injected at session start and after compaction. Do not also copy the skills into a user-level entry point; that duplicates policy and drifts. Reconcile and remove superseded standalone copies deliberately.
+If native integration is insufficient, a local link, copy, or thin guidance adapter may reuse the Claude-managed installation. Keep that adaptation outside this repository, identify its authoritative source and update path, and avoid competing policy copies.
+
+Verify skill discovery and engineering-defaults loading at session start and after compaction. An explicit read route does not guarantee automatic restoration; report the actual behavior. Reconcile and remove superseded standalone guidance deliberately.
 
 ## Check the result
 
