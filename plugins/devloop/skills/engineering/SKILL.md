@@ -11,7 +11,7 @@ These are the owner's engineering defaults. Apply them within current explicit t
 - Keep the intended outcome, authority, constraints, and completion bounds clear. Ask about ambiguity that materially changes those bounds; make routine choices and continue through verification and ordinary repair within them.
 - Choose the least costly checks that cover the relevant failure risk. A build or unit test supports only what it exercises. Report what was checked, meaningful gaps, and uncertainty; revise a diagnosis or completion claim when contrary evidence appears.
 - Keep substantial changes understandable and work resumable. Preserve only the state that would otherwise be costly to reconstruct. Do not require plans, progress notes, or a fixed workflow for every task.
-- Design for the actual need. Prefer sufficient native capabilities and clear ownership boundaries over inherited complexity, speculative compatibility, or mechanisms whose continuing cost exceeds their benefit.
+- Design for the actual need. Prefer sufficient native capabilities, supported integration paths, and clear ownership boundaries over inherited complexity, speculative compatibility, or mechanisms whose continuing cost exceeds their benefit.
 - Retain durable knowledge and non-obvious reasoning where future decisions need them. Avoid competing sources and stale records. Close resources created for the task when they are no longer needed, preserving useful results first.
 - Use concise English for tracked engineering artifacts unless current intent or legitimate project conventions call for another language. This does not set the language of conversation.
 

@@ -24,6 +24,8 @@ Stop when further investigation is unlikely to change the decision; investigatio
 
 Start from the intended capabilities and constraints, then assess whether the current design serves them. Existing code is evidence about the system, not sufficient reason to retain its structure. Evaluate proposed solutions, including the owner's suggestions, against the need; stay within the authorized scope of redesign.
 
+Judge simplicity by the cost of understanding, operating, verifying, and changing the result. A short patch that hides failures or introduces hidden coupling can cost more than a direct implementation. Preserve required behavior and useful reasoning when simplifying.
+
 Prefer independently understandable boundaries. Share code or split files when it improves understanding, ownership, or maintenance; uniformity alone is not a reason to couple independent components. Small cohesive configuration can stay inline.
 
 Respect independently configured components. Improving one tool does not give it ownership of another plugin's settings or the user's surrounding environment. Prefer controls within the owned component; accept a bounded limitation when the alternative is unwanted coupling. Deliberate integration can be valid when it is part of the intended product contract. Similarly, contributor tooling should not become a product runtime dependency without a user-facing need.
@@ -75,4 +77,6 @@ Before adding a rule, script, hook, skill, abstraction, or dependency, check whe
 
 A mechanism is worthwhile when it reliably reduces a recurring burden enough to justify those costs. A one-off inconvenience is weaker evidence. Judge the continuing benefit and cost, not whether the mechanism is custom or automated.
 
-Prefer upstream-supported usage when it meets the need: upstream is more likely to maintain that path, while custom glue can drift. Newness alone does not justify migration. Compatibility layers, fallback paths, and configurability should answer a real audience need; optional capability can be omitted when its continuing burden is greater than its value.
+Prefer upstream-supported usage when it meets the need: upstream is more likely to maintain that path, while custom glue can drift. Verify the relevant limitation before adding a workaround. Keep it within the affected boundary and retain why it is needed and what would allow its removal; do not turn an environment-specific workaround into a product requirement.
+
+Newness alone does not justify migration. Compatibility layers, fallback paths, and configurability should answer a real audience need; optional capability can be omitted when its continuing burden is greater than its value.
