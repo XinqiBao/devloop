@@ -27,3 +27,15 @@ Before claiming completion:
 - Review the guidance as a whole for duplication, conflicts, accidental workflow requirements, and stale references.
 - Check that an engineer can follow the reasoning and an agent can identify the operative guidance.
 - Review the final diff, links, and affected behavior.
+
+## Package checks
+
+For package changes, use the relevant checks:
+
+```sh
+python3 -m unittest discover -s tests -v
+claude plugin validate .claude-plugin/plugin.json
+claude plugin validate .claude-plugin/marketplace.json
+```
+
+When changing loading or routing, also exercise implicit skill selection and core restoration in real sessions outside this checkout. The root `CLAUDE.md` is a repository adapter; the native validator's note that it is not loaded as plugin context is expected. Runtime core loading uses the hook.

@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant skills and setup preferences in devloop. [Status-line preferences](preferences/status-lines.md) apply when configuring the environment's display; they do not need a runtime skill.
+Compare what the target already uses with the relevant skills and setup references, including the optional [status-line preferences](preferences/status-lines.md).
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
@@ -37,17 +37,17 @@ Keep the skill sources together with their references. Arrange for `devloop-core
 
 ## Claude Code
 
-The repository root is a Claude Code plugin, with a marketplace in `.claude-plugin/marketplace.json`. Use the preview or install commands in [README.md](README.md). For a local installation, put the complete package in a stable installation directory outside the development checkout. Claude Code loads local-directory marketplaces in place, even when a cache copy also exists; removing that source breaks loading. Treat that stable copy as the installed package and update it deliberately. Reconcile an existing marketplace named `devloop` rather than silently replacing its source. Use your normal model, authentication, and permission settings.
+The plugin and marketplace are defined in `.claude-plugin/`. The read-only `SessionStart` hook loads `devloop-core` at startup, resume, clear, and compaction. It requires command-hook `args` support, `sh`, and `awk`.
 
-The plugin discovers skills from `skills/`. A read-only `SessionStart` hook emits the body of `devloop-core` from the installed package, together with its source and reference directory. It runs for `startup`, `resume`, `clear`, and `compact`; it does not load every situational skill. Requires a CLI that supports command-hook `args`, plus `sh` and `awk` on the hook's executable path. Validate against the installed CLI before relying on this format.
+Local-directory marketplaces load in place. Keep their package directory available at runtime and independent of the development checkout.
 
-Confirm that the plugin is enabled and its skills appear in the client's skill listing. In a fresh session outside the devloop checkout, inspect the hook execution and emitted core context, then exercise a relevant task without naming a skill. Inspect the actual skill invocation or file-read events. Repeat after `/compact`; a model saying it remembers the rules is not sufficient evidence. If core loading fails, inspect the hook error and repair the installation; `SessionStart` errors do not block the session.
+Reconcile superseded personal guidance when enabling the plugin. Preserve unrelated conversation preferences, host runbooks, and project rules. Installation does not perform this reconciliation.
 
-Reconcile an existing personal guidance copy when enabling the plugin. Preserve unrelated conversation preferences, host runbooks, and project rules; remove or retire superseded devloop policy copies only within the authorized application scope. A plugin install alone does not perform that reconciliation. After updating a plugin version, reload or restart as required by the installed client and check the effective package version.
+Verify actual core injection and situational skill selection outside this checkout, including after compaction. A `SessionStart` error does not block the session; inspect hook failures rather than assuming guidance loaded.
 
 ## Codex
 
-Use the same skill directories through Codex's native standalone-skill discovery. Copy the directories from `skills/` into `~/.agents/skills/`, preserving their reference files and sibling layout. Reconcile an existing directory with the same name before replacing it. The installed copy must remain usable without this development checkout.
+Expose the shared skills through native discovery, preserving references and sibling layout. The user-level location is `~/.agents/skills/`.
 
 In the existing user-level `~/.codex/AGENTS.md`, add a short loading instruction such as:
 
@@ -55,9 +55,7 @@ In the existing user-level `~/.codex/AGENTS.md`, add a short loading instruction
 For engineering work, read ~/.agents/skills/devloop-core/SKILL.md before substantive work and again after context compaction. Use its routes to load situational devloop skills as work progresses. Keep devloop policy in the installed skills rather than copying it into this entry point.
 ```
 
-Start a fresh Codex session outside the devloop checkout. Verify that the installed skills are discoverable and that a normal engineering request causes the core and relevant situational body to be read. Check unrelated requests as well, so optional skills do not attract unrelated work.
-
-This adaptation uses a native instruction to request core loading, rather than the Claude-specific hook. Discovery exposes names and descriptions; it does not itself inject the core body. Test restoration after compaction on the actual Codex client before claiming equivalent persistence. Reapply or reconcile installed copies deliberately when updating devloop.
+Discovery exposes names and descriptions. This entry point asks the model to read the core body; it does not provide the Claude hook's automatic injection. Verify loading and restoration after compaction on the target client. Reconcile installed copies deliberately when updating devloop.
 
 ## Check the result
 
