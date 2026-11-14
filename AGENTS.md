@@ -2,7 +2,7 @@
 
 Read [README.md](README.md) and the relevant guidance before changing this repository.
 
-Keep runtime engineering guidance in `skills/` and setup-only tool preferences in `preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
+Keep guidance used during engineering work in `skills/`, including personal preferences that apply at a particular decision. Keep setup-only tool preferences in `preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
 
 ## Scope and selection
 
@@ -39,3 +39,5 @@ claude plugin validate .claude-plugin/marketplace.json
 ```
 
 When changing loading or routing, also exercise implicit skill selection and engineering-defaults restoration in real sessions outside this checkout. The root `CLAUDE.md` is a repository adapter; the native validator's note that it is not loaded as plugin context is expected. Runtime engineering-defaults loading uses the hook.
+
+Use focused behavioral checks for the decision being changed. A larger eval suite is useful for recurring misrouting or uncertain behavioral benefit; compare with a baseline when measuring improvement. Do not run a full model-graded suite for every wording change or equate skill invocation with better decisions.

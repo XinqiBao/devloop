@@ -30,6 +30,10 @@ Place a current fact near the code, interface, or project guidance where readers
 
 For example, state a current API constraint near the interface. Link to the commit that introduced it if the rationale matters. The interface states what applies now; history explains why it changed.
 
+Prefer tracked project records for knowledge that another contributor or agent needs: shared conventions, supported behavior, design rationale, and collaboration boundaries. This makes the same information available across checkouts, machines, and parallel workers. Extend the relevant code, document, or project entry point rather than creating a separate agent-only copy.
+
+Keep the default entry path short and route readers to the relevant detail. A project instruction file should expose operative rules and navigation, not accumulate every investigation or implementation detail. Temporary coordination state may also belong in a tracked project record when the participants need shared access; give it an owner and retire it when the work ends. Personal environment facts, raw transcripts, and each worker's live scratch state do not become shared policy merely because an agent uses them.
+
 ## Close out investigation notes
 
 During active work, observations, hypotheses, and failed approaches may help continuity. At completion, retain only conclusions and supporting detail future work needs. Keep a failed approach when its reason for failure would otherwise be rediscovered; retire the rest.

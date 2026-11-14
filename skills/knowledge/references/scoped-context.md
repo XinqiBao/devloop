@@ -4,6 +4,8 @@ Local context holds information that should stay local or is not yet ready for t
 
 The owner's preferred local convention is `.context/` with an explicit entry point. Use it when continuity or local knowledge warrants it; a small change recoverable from its diff may need no note. Keep this personal convention out of tracked repository requirements unless the project independently adopts it. Check existing ignore behavior before adding ignore rules.
 
+Prefer tracked project records when the information needs to travel with the project or be read by other contributors and agents. An ignored `.context/` is a local supplement, not the default home for shared conventions, durable rationale, or parallel-work coordination that others cannot otherwise reach.
+
 ## Choose the scope
 
 | Scope | Belongs here | Boundary |

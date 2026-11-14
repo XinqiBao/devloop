@@ -26,3 +26,5 @@ Use these installed skills when work enters the relevant situation, including st
 For a consequential decision that needs more reasoning about investigation, authority, verification, continuity, or persistent mechanisms, read [Engineering judgment](references/judgment.md). These judgments interact; they are not mandatory stages or gates.
 
 For coding-agent file editing or delegated work, read [Agent operations](references/agent-work.md). Its operating preferences do not prescribe a particular agent product.
+
+When choosing or reorganizing a local repository or worktree layout, read the owner's [Git layout preference](references/git-layout.md). It applies at that decision, not just when installing devloop.

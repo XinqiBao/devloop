@@ -1,6 +1,6 @@
 # devloop
 
-devloop holds the owner's engineering defaults and judgment for use across projects. Skills guide everyday work; setup references hold optional tool preferences. Project facts and effective settings stay in their own environments.
+devloop is the owner's agent dotfiles: personal engineering habits, judgments, and tool preferences, versioned for use across development environments. Skills guide everyday work; setup references hold preferences used when configuring tools. These are deliberate personal defaults, not universal engineering rules. Project facts and effective settings stay in their own environments.
 
 ## Read and load
 
@@ -8,12 +8,12 @@ The engineering defaults apply throughout engineering work. Situational skills l
 
 | Skill | When it applies |
 | --- | --- |
-| [Engineering defaults](skills/engineering/SKILL.md) | Throughout engineering work; routes to relevant skills and [deeper judgment](skills/engineering/references/judgment.md). |
+| [Engineering defaults](skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](skills/engineering/references/judgment.md), [agent operations](skills/engineering/references/agent-work.md), and [Git layout](skills/engineering/references/git-layout.md) when relevant. |
 | [Commits](skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
 | [Writing](skills/writing/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](skills/knowledge/references/scoped-context.md). |
 
-Setup preferences cover [Git layout](preferences/git-layout.md) and [status lines](preferences/status-lines.md). Apply them when configuring a relevant environment; effective tool settings stay in native configuration.
+The [status-line preference](preferences/status-lines.md) applies when configuring an agent interface; effective tool settings stay in native configuration.
 
 Claude Code uses the devloop plugin; Codex uses the same skills with a thin native entry point. [Applying devloop](APPLY.md) covers the integration details.
 

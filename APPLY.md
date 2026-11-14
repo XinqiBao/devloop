@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant skills and optional setup preferences for [Git layout](preferences/git-layout.md) and [status lines](preferences/status-lines.md). A setup preference is not authorization to migrate existing repositories or replace working configuration.
+Compare what the target already uses with the relevant skills and the optional [status-line preference](preferences/status-lines.md). The [Git layout preference](skills/engineering/references/git-layout.md) is available through the engineering skill when choosing a workspace layout; it does not authorize migrating existing repositories.
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
