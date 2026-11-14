@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "devloop",
-      "source": "./",
+      "source": "./plugin",
       "description": "Portable engineering defaults and agent workflow guidance.",
       "category": "workflow",
       "tags": [

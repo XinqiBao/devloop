@@ -10,6 +10,7 @@ import unittest
 
 
 REPO = Path(__file__).resolve().parents[1]
+PACKAGE = REPO / "plugin"
 
 
 class CoreLoadingTests(unittest.TestCase):
@@ -17,7 +18,7 @@ class CoreLoadingTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix="devloop-test-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / "plugin with spaces and 'quotes'"
-        shutil.copytree(REPO / "hooks", self.root / "hooks")
+        shutil.copytree(PACKAGE / "hooks", self.root / "hooks")
         self.core = self.root / "skills/engineering/SKILL.md"
         self.core.parent.mkdir(parents=True)
         self.write_core("# Fixture guidance\n\nKeep this paragraph.\n\n---\n\nAnd this one.")
@@ -66,8 +67,8 @@ class CoreLoadingTests(unittest.TestCase):
         self.assertEqual(list(self.cwd.iterdir()), [])
 
     def test_declared_hook_loads_actual_engineering_body(self):
-        core = REPO / "skills/engineering/SKILL.md"
-        result = self.run_hook(root=REPO)
+        core = PACKAGE / "skills/engineering/SKILL.md"
+        result = self.run_hook(root=PACKAGE)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(str(core), result.stdout)
         self.assertIn("devloop:engineering source:", result.stdout)

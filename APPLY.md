@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant skills and the optional [status-line preference](preferences/status-lines.md). The [Git layout preference](skills/engineering/references/git-layout.md) is available through the engineering skill when choosing a workspace layout; it does not authorize migrating existing repositories.
+Compare what the target already uses with the relevant skills and the optional [status-line preference](plugin/preferences/status-lines.md). The [Git layout preference](plugin/skills/engineering/references/git-layout.md) is available through the engineering skill when choosing a workspace layout; it does not authorize migrating existing repositories.
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
@@ -33,11 +33,11 @@ Put guidance where its intended readers already look. Keep provider and tool set
 
 Several agents may share one guidance file through short native entry points. Split content when readers, scopes, or maintenance needs differ enough to justify another file. Choose directory, linkage, and file count for the target environment.
 
-Keep the skill sources together with their references. Arrange for `engineering` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
+Keep the payload's skill sources together with their references. Arrange for `engineering` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
 
 ## Install the shared package
 
-The plugin and marketplace are defined in `.claude-plugin/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
+The marketplace is defined in `.claude-plugin/`; the plugin payload is under `plugin/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
 
 ### Claude Code
 
