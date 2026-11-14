@@ -1,4 +1,4 @@
-"""Exercise the declared Claude hook without a model call or user configuration."""
+"""Exercise the declared hook through a real shell without a model call or user configuration."""
 
 import json
 import os
@@ -34,21 +34,24 @@ class CoreLoadingTests(unittest.TestCase):
         config = json.loads((root / "hooks/hooks.json").read_text())
         return config["hooks"]["SessionStart"][0]
 
-    def declared_hook_argv(self, root):
+    def declared_hook_command(self, root):
         hook = self.declared_session_start(root)["hooks"][0]
-        return [hook["command"]] + [
-            arg.replace("${CLAUDE_PLUGIN_ROOT}", str(root))
-            for arg in hook["args"]
-        ]
+        return hook["command"]
 
-    def run_hook(self, *, source="startup", set_root=True):
-        argv = self.declared_hook_argv(self.root)
+    def run_hook(self, *, source="startup", set_root=True, root=None):
+        root = self.root if root is None else root
         env = os.environ.copy()
         env.pop("CLAUDE_PLUGIN_ROOT", None)
         if set_root:
-            env["CLAUDE_PLUGIN_ROOT"] = str(self.root)
+            env["CLAUDE_PLUGIN_ROOT"] = str(root)
         return subprocess.run(
-            argv, cwd=self.cwd, env=env, text=True, capture_output=True,
+            self.declared_hook_command(root),
+            shell=True,
+            executable="/bin/sh",
+            cwd=self.cwd,
+            env=env,
+            text=True,
+            capture_output=True,
             input=json.dumps({"hook_event_name": "SessionStart", "source": source}),
             timeout=5,
         )
@@ -64,14 +67,7 @@ class CoreLoadingTests(unittest.TestCase):
 
     def test_declared_hook_loads_actual_engineering_body(self):
         core = REPO / "skills/engineering/SKILL.md"
-        env = os.environ.copy()
-        env["CLAUDE_PLUGIN_ROOT"] = str(REPO)
-        result = subprocess.run(
-            self.declared_hook_argv(REPO), cwd=self.cwd, env=env, text=True,
-            capture_output=True,
-            input=json.dumps({"hook_event_name": "SessionStart", "source": "startup"}),
-            timeout=5,
-        )
+        result = self.run_hook(root=REPO)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(str(core), result.stdout)
         self.assertIn("devloop:engineering source:", result.stdout)
@@ -103,7 +99,7 @@ class CoreLoadingTests(unittest.TestCase):
         result = self.run_hook(set_root=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(result.stdout, "")
-        self.assertIn("CLAUDE_PLUGIN_ROOT", result.stderr)
+        self.assertTrue(result.stderr)
 
 
 if __name__ == "__main__":

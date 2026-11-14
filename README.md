@@ -15,7 +15,7 @@ The engineering defaults apply throughout engineering work. Situational skills l
 
 The [status-line preference](preferences/status-lines.md) applies when configuring an agent interface; effective tool settings stay in native configuration.
 
-Claude Code uses the devloop plugin; Codex uses the same skills with a thin native entry point. [Applying devloop](APPLY.md) covers the integration details.
+Claude Code and Codex both consume the same devloop plugin package; [Applying devloop](APPLY.md) covers native marketplace installation, hook trust, and verification.
 
 ## Use with an agent
 
