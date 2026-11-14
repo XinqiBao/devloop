@@ -21,6 +21,5 @@ Use these installed skills when work enters the relevant situation, including st
 - **devloop-commits:** before grouping changes into commits, writing commit messages, or assessing history. Use Conventional Commits and coherent engineering intent by default.
 - **devloop-communication:** when writing engineering documents, pull request descriptions, or lasting explanations. Lead with the decision and useful evidence; omit incidental agent narration and automatic attribution unless useful or required.
 - **devloop-knowledge:** when deciding what findings or active state to preserve, during a handoff, or when recovering substantial interrupted work. Small work may need no separate record.
-- **devloop-statusline:** only when configuring or reviewing an agent's status display; keep effective settings in native configuration.
 
 For a consequential decision that needs more reasoning about investigation, authority, verification, continuity, or persistent mechanisms, read [Engineering judgment](references/judgment.md). These judgments interact; they are not mandatory stages or gates.

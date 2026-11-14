@@ -1,10 +1,10 @@
 # devloop
 
-devloop is the owner's portable, versioned engineering guidance, authored as skills for use across projects. It preserves personal defaults, practices, and judgment, plus optional agent-tool preferences; these are not universal rules. Engineers can read the same material directly. Project facts and effective tool settings belong in the environments where they apply.
+devloop is the owner's portable, versioned engineering guidance for use across projects. Skills hold everyday engineering defaults, practices, and judgment; setup references hold optional agent-tool preferences. These are personal defaults, not universal rules. Engineers can read the same material directly. Project facts and effective tool settings belong in the environments where they apply.
 
 ## Read and load
 
-Skills are the maintained source of personal guidance. Loading frequency is separate from storage: the small core applies throughout engineering work, while situational skills load when their decisions become relevant. Native agent entry points provide loading instructions rather than a second set of policy.
+Skills are the maintained source of runtime guidance. The small core applies throughout engineering work, while situational skills load when their decisions become relevant. Native agent entry points provide loading instructions rather than a second set of policy.
 
 | Skill | When it applies |
 | --- | --- |
@@ -12,9 +12,10 @@ Skills are the maintained source of personal guidance. Loading frequency is sepa
 | [Commits](skills/devloop-commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
 | [Engineering communication](skills/devloop-communication/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](skills/devloop-knowledge/SKILL.md) | Retaining findings, placing rationale, handing off, or recovering work; includes [working context](skills/devloop-knowledge/references/working-context.md). |
-| [Status lines](skills/devloop-statusline/SKILL.md) | Configuring an agent's status display; optional and tool-specific. |
 
 Loading a skill constrains authorized work; it does not authorize committing, publishing, or changing an environment. A file link is a reading path, not proof that a client has loaded its contents.
+
+[Status-line preferences](preferences/status-lines.md) are an optional setup reference when applying devloop to an environment. Effective display settings belong in native configuration.
 
 ## Try the Claude Code plugin
 

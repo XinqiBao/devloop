@@ -2,7 +2,7 @@
 
 Read [README.md](README.md) and the relevant guidance before changing this repository.
 
-Keep portable personal guidance in `skills/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
+Keep runtime engineering guidance in `skills/` and setup-only tool preferences in `preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
 
 ## Scope and selection
 

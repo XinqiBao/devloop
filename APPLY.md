@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant skills in devloop:
+Compare what the target already uses with the relevant skills and setup preferences in devloop. [Status-line preferences](preferences/status-lines.md) apply when configuring the environment's display; they do not need a runtime skill.
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
@@ -47,7 +47,7 @@ Reconcile an existing personal guidance copy when enabling the plugin. Preserve 
 
 ## Codex
 
-Use the same skill directories through Codex's native standalone-skill discovery. Copy all five directories from `skills/` into `~/.agents/skills/`, preserving their reference files and sibling layout. Reconcile an existing directory with the same name before replacing it. The installed copy must remain usable without this development checkout.
+Use the same skill directories through Codex's native standalone-skill discovery. Copy the directories from `skills/` into `~/.agents/skills/`, preserving their reference files and sibling layout. Reconcile an existing directory with the same name before replacing it. The installed copy must remain usable without this development checkout.
 
 In the existing user-level `~/.codex/AGENTS.md`, add a short loading instruction such as:
 
@@ -55,7 +55,7 @@ In the existing user-level `~/.codex/AGENTS.md`, add a short loading instruction
 For engineering work, read ~/.agents/skills/devloop-core/SKILL.md before substantive work and again after context compaction. Use its routes to load situational devloop skills as work progresses. Keep devloop policy in the installed skills rather than copying it into this entry point.
 ```
 
-Start a fresh Codex session outside the devloop checkout. Verify that all five skills are discoverable and that a normal engineering request causes the core and relevant situational body to be read. Check unrelated requests as well, so optional skills do not attract unrelated work.
+Start a fresh Codex session outside the devloop checkout. Verify that the installed skills are discoverable and that a normal engineering request causes the core and relevant situational body to be read. Check unrelated requests as well, so optional skills do not attract unrelated work.
 
 This adaptation uses a native instruction to request core loading, rather than the Claude-specific hook. Discovery exposes names and descriptions; it does not itself inject the core body. Test restoration after compaction on the actual Codex client before claiming equivalent persistence. Reapply or reconcile installed copies deliberately when updating devloop.
 
