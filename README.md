@@ -8,12 +8,12 @@ The engineering defaults apply throughout engineering work. Situational skills l
 
 | Skill | When it applies |
 | --- | --- |
-| [Engineering defaults](plugin/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugin/skills/engineering/references/judgment.md), [agent operations](plugin/skills/engineering/references/agent-work.md), and [Git layout](plugin/skills/engineering/references/git-layout.md) when relevant. |
-| [Commits](plugin/skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
-| [Writing](plugin/skills/writing/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
-| [Knowledge and continuity](plugin/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugin/skills/knowledge/references/scoped-context.md). |
+| [Engineering defaults](plugins/devloop/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugins/devloop/skills/engineering/references/judgment.md), [agent operations](plugins/devloop/skills/engineering/references/agent-work.md), and [Git layout](plugins/devloop/skills/engineering/references/git-layout.md) when relevant. |
+| [Commits](plugins/devloop/skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
+| [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
+| [Knowledge and continuity](plugins/devloop/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugins/devloop/skills/knowledge/references/scoped-context.md). |
 
-The [status-line preference](plugin/preferences/status-lines.md) applies when configuring an agent interface; effective tool settings stay in native configuration.
+The [status-line preference](plugins/devloop/preferences/status-lines.md) applies when configuring an agent interface; effective tool settings stay in native configuration.
 
 Claude Code and Codex both consume the same devloop plugin package; [Applying devloop](APPLY.md) covers native marketplace installation, hook trust, and verification.
 

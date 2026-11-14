@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant skills and the optional [status-line preference](plugin/preferences/status-lines.md). The [Git layout preference](plugin/skills/engineering/references/git-layout.md) is available through the engineering skill when choosing a workspace layout; it does not authorize migrating existing repositories.
+Compare what the target already uses with the relevant skills and the optional [status-line preference](plugins/devloop/preferences/status-lines.md). The [Git layout preference](plugins/devloop/skills/engineering/references/git-layout.md) is available through the engineering skill when choosing a workspace layout; it does not authorize migrating existing repositories.
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
@@ -37,7 +37,7 @@ Keep the payload's skill sources together with their references. Arrange for `en
 
 ## Install the shared package
 
-The marketplace is defined in `.claude-plugin/`; the plugin payload is under `plugin/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
+The marketplace is defined in `.claude-plugin/`; the plugin payload is under `plugins/devloop/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
 
 ### Claude Code
 

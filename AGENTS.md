@@ -2,7 +2,9 @@
 
 Read [README.md](README.md) and the relevant guidance before changing this repository.
 
-Keep guidance used during engineering work in `plugin/skills/`, including personal preferences that apply at a particular decision. Keep setup-only tool preferences in `plugin/preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
+Keep guidance used during engineering work in `plugins/devloop/skills/`, including personal preferences that apply at a particular decision. Keep setup-only tool preferences in `plugins/devloop/preferences/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
+
+For marketplace and payload layout, follow the official [marketplace setup](https://code.claude.com/docs/en/plugins/create-marketplace#create-a-marketplace) and [plugin standard layout](https://code.claude.com/docs/en/plugins/manifest-reference#standard-layout).
 
 ## Scope and selection
 
@@ -20,7 +22,7 @@ Strengthen an existing topic before adding a document. Split a topic only when i
 
 Write direct engineering guidance. Remove unnecessary material, but keep the reasoning needed to apply a judgment.
 
-Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Writing](plugin/skills/writing/SKILL.md) without imposing a template or teaching basic tools.
+Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Writing](plugins/devloop/skills/writing/SKILL.md) without imposing a template or teaching basic tools.
 
 Before claiming completion:
 
@@ -34,10 +36,10 @@ For package changes, use the relevant checks:
 
 ```sh
 python3 -m unittest discover -s tests -v
-claude plugin validate plugin/.claude-plugin/plugin.json
+claude plugin validate plugins/devloop/.claude-plugin/plugin.json
 claude plugin validate .claude-plugin/marketplace.json
 ```
 
-When changing loading or routing, also exercise implicit skill selection and engineering-defaults restoration in real sessions outside this checkout. Runtime engineering-defaults loading uses the hook. Keep repository surfaces—root documentation, tests, and the repository adapter—outside `plugin/`.
+When changing loading or routing, also exercise implicit skill selection and engineering-defaults restoration in real sessions outside this checkout. Runtime engineering-defaults loading uses the hook. Keep repository surfaces—root documentation, tests, and the repository adapter—outside `plugins/devloop/`.
 
 Use focused behavioral checks for the decision being changed. A larger eval suite is useful for recurring misrouting or uncertain behavioral benefit; compare with a baseline when measuring improvement. Do not run a full model-graded suite for every wording change or equate skill invocation with better decisions.

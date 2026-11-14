@@ -10,7 +10,7 @@ import unittest
 
 
 REPO = Path(__file__).resolve().parents[1]
-PACKAGE = REPO / "plugin"
+PACKAGE = REPO / "plugins" / "devloop"
 
 
 class CoreLoadingTests(unittest.TestCase):
