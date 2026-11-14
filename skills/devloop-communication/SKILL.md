@@ -40,4 +40,6 @@ When a diagram makes a relationship clearer than text, use a maintainable format
 
 Keep tracked engineering artifacts in English by default, subject to task intent and project conventions.
 
+Write for the intended reader's knowledge and decisions. Delivered documentation should explain the project, its behavior, and necessary caveats; omit basic tool tutorials and development-only trial instructions unless those are its purpose. Do not add comments that merely restate visible configuration or code.
+
 Omit prompt residue, agent narration, and automatic agent or tool attribution unless they affect a decision, provenance, reproducibility, or interpretation. Avoid decorative structure and fixed templates that add reading cost.

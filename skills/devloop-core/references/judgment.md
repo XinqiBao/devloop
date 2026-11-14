@@ -20,6 +20,14 @@ For example:
 
 Stop when further investigation is unlikely to change the decision; investigation also has a cost.
 
+## Design for the actual need
+
+Start from the intended capabilities and constraints, then assess whether the current design serves them. Existing code is evidence about the system, not sufficient reason to retain its structure. Evaluate proposed solutions, including the owner's suggestions, against the need; stay within the authorized scope of redesign.
+
+Prefer independently understandable boundaries. Share code or split files when it improves understanding, ownership, or maintenance; uniformity alone is not a reason to couple independent components. Small cohesive configuration can stay inline.
+
+Respect independently configured components. Improving one tool does not give it ownership of another plugin's settings or the user's surrounding environment. Prefer controls within the owned component; accept a bounded limitation when the alternative is unwanted coupling. Deliberate integration can be valid when it is part of the intended product contract. Similarly, contributor tooling should not become a product runtime dependency without a user-facing need.
+
 ## Keep task boundaries distinct
 
 Establish the answers that matter to the work:
@@ -35,6 +43,8 @@ A technically sound change can still solve the wrong problem or exceed the autho
 - Within clear bounds, make routine implementation choices and continue through verification and ordinary repair.
 - Revisit the owner decision if new evidence would materially expand the task.
 
+Keep decision provenance honest. A recommendation accepted for the current task is not automatically a strong owner preference or a permanent requirement. Distinguish explicit intent from repository constraints, provisional choices, and inference when that distinction affects later decisions. A local trial does not establish an adopted portable default.
+
 ## Match claims to evidence
 
 Evidence supports only what it actually checks. Choose the least costly checks or observations that cover the relevant failure risk:
@@ -45,6 +55,8 @@ Evidence supports only what it actually checks. Choose the least costly checks o
 Report what you checked, what relevant behavior remains unchecked, and any material uncertainty. Claim completion only at the scope the evidence supports. If a check fails, a new caller appears, or runtime behavior contradicts the diagnosis, revise the plan, implementation, or completion claim.
 
 Verification checks whether the result holds; it is not a fixed set of gates.
+
+Tests also have a maintenance cost. Protect supported contracts, meaningful state transitions, and consequential failure paths. Avoid assertions that merely mirror implementation structure and obstruct valid changes. During rapid iteration, run focused checks; complete the relevant delivery checks once the result is ready rather than rerunning every passed suite after each small edit.
 
 ## Preserve only the state needed to resume
 
@@ -62,3 +74,5 @@ Before adding a rule, script, hook, skill, abstraction, or dependency, check whe
 - Diagnosing failures it introduces or obscures.
 
 A mechanism is worthwhile when it reliably reduces a recurring burden enough to justify those costs. A one-off inconvenience is weaker evidence. Judge the continuing benefit and cost, not whether the mechanism is custom or automated.
+
+Prefer upstream-supported usage when it meets the need: upstream is more likely to maintain that path, while custom glue can drift. Newness alone does not justify migration. Compatibility layers, fallback paths, and configurability should answer a real audience need; optional capability can be omitted when its continuing burden is greater than its value.

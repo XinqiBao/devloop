@@ -11,7 +11,8 @@ These are the owner's engineering defaults. Apply them within current explicit t
 - Keep the intended outcome, authority, constraints, and completion bounds clear. Ask about ambiguity that materially changes those bounds; make routine choices and continue through verification and ordinary repair within them.
 - Choose the least costly checks that cover the relevant failure risk. A build or unit test supports only what it exercises. Report what was checked, meaningful gaps, and uncertainty; revise a diagnosis or completion claim when contrary evidence appears.
 - Keep substantial changes understandable and work resumable. Preserve only the state that would otherwise be costly to reconstruct. Do not require plans, progress notes, or a fixed workflow for every task.
-- Retain durable knowledge and non-obvious reasoning where future decisions need them. Avoid competing sources, stale records, and mechanisms whose continuing cost exceeds their demonstrated benefit. Prefer sufficient native capabilities.
+- Design for the actual need. Prefer sufficient native capabilities and clear ownership boundaries over inherited complexity, speculative compatibility, or mechanisms whose continuing cost exceeds their benefit.
+- Retain durable knowledge and non-obvious reasoning where future decisions need them. Avoid competing sources and stale records. Close resources created for the task when they are no longer needed, preserving useful results first.
 - Use concise English for tracked engineering artifacts unless current intent or legitimate project conventions call for another language. This does not set the language of conversation.
 
 ## Load guidance at the point of use
@@ -23,3 +24,5 @@ Use these installed skills when work enters the relevant situation, including st
 - **devloop-knowledge:** when deciding what findings or active state to preserve, during a handoff, or when recovering substantial interrupted work. Small work may need no separate record.
 
 For a consequential decision that needs more reasoning about investigation, authority, verification, continuity, or persistent mechanisms, read [Engineering judgment](references/judgment.md). These judgments interact; they are not mandatory stages or gates.
+
+For coding-agent file editing or delegated work, read [Agent operations](references/agent-work.md). Its operating preferences do not prescribe a particular agent product.

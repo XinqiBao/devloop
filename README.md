@@ -13,7 +13,7 @@ The core applies throughout engineering work. Situational skills load as their d
 | [Engineering communication](skills/devloop-communication/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](skills/devloop-knowledge/SKILL.md) | Retaining findings, placing rationale, handing off, or recovering work; includes [working context](skills/devloop-knowledge/references/working-context.md). |
 
-[Status-line preferences](preferences/status-lines.md) are an optional setup reference when applying devloop to an environment. Effective display settings belong in native configuration.
+Setup preferences cover [Git layout](preferences/git-layout.md) and [status lines](preferences/status-lines.md). Apply them when configuring a relevant environment; effective tool settings stay in native configuration.
 
 Claude Code uses the devloop plugin; Codex uses the same skills with a thin native entry point. [Applying devloop](APPLY.md) covers the integration details.
 
