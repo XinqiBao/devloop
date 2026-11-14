@@ -1,9 +1,9 @@
 ---
-name: devloop-communication
+name: writing
 description: "Apply the owner's writing preferences when drafting or revising engineering documents, pull request descriptions, design explanations, or durable investigation conclusions. Does not set the language or format of ordinary conversation."
 ---
 
-# Engineering Communication
+# Writing
 
 These are the owner's defaults; apply them within current task intent and project requirements.
 

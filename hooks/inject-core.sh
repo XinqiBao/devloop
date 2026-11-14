@@ -1,5 +1,5 @@
 #!/bin/sh
-# Emit the body of the installed plugin's core policy as SessionStart context.
+# Emit the body of the installed plugin's engineering defaults as SessionStart context.
 set -eu
 
 if [ -z "${CLAUDE_PLUGIN_ROOT:-}" ]; then
@@ -7,7 +7,7 @@ if [ -z "${CLAUDE_PLUGIN_ROOT:-}" ]; then
 	exit 2
 fi
 
-skill_dir="$CLAUDE_PLUGIN_ROOT/skills/devloop-core"
+skill_dir="$CLAUDE_PLUGIN_ROOT/skills/engineering"
 core="$skill_dir/SKILL.md"
 
 if [ ! -f "$core" ] || [ ! -r "$core" ]; then
@@ -30,6 +30,6 @@ if [ -z "$body" ]; then
 	exit 2
 fi
 
-printf 'devloop-core source: %s\n' "$core"
+printf 'devloop:engineering source: %s\n' "$core"
 printf 'relative references resolve from: %s\n\n' "$skill_dir"
 printf '%s\n' "$body"

@@ -1,5 +1,5 @@
 ---
-name: devloop-commits
+name: commits
 description: "Apply the owner's commit conventions when organizing changes into commits, writing commit messages, or reviewing commit boundaries. Use when work reaches a commit stage, including during a larger task."
 ---
 
@@ -24,7 +24,7 @@ Use Conventional Commits by default so history is easy to scan. The format descr
 
 State the intent in the subject. Add a body when a surprising tradeoff or rejected alternative would otherwise be hard to recover.
 
-History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. [devloop-knowledge](../devloop-knowledge/SKILL.md) covers that placement.
+History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. [knowledge](../knowledge/SKILL.md) covers that placement.
 
 ## Choose workflow for the repository
 

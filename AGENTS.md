@@ -20,7 +20,7 @@ Strengthen an existing topic before adding a document. Split a topic only when i
 
 Write direct engineering guidance. Remove unnecessary material, but keep the reasoning needed to apply a judgment.
 
-Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Engineering Communication](skills/devloop-communication/SKILL.md) without imposing a template or teaching basic tools.
+Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Writing](skills/writing/SKILL.md) without imposing a template or teaching basic tools.
 
 Before claiming completion:
 
@@ -38,4 +38,4 @@ claude plugin validate .claude-plugin/plugin.json
 claude plugin validate .claude-plugin/marketplace.json
 ```
 
-When changing loading or routing, also exercise implicit skill selection and core restoration in real sessions outside this checkout. The root `CLAUDE.md` is a repository adapter; the native validator's note that it is not loaded as plugin context is expected. Runtime core loading uses the hook.
+When changing loading or routing, also exercise implicit skill selection and engineering-defaults restoration in real sessions outside this checkout. The root `CLAUDE.md` is a repository adapter; the native validator's note that it is not loaded as plugin context is expected. Runtime engineering-defaults loading uses the hook.

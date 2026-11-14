@@ -18,7 +18,7 @@ class CoreLoadingTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / "plugin with spaces and 'quotes'"
         shutil.copytree(REPO / "hooks", self.root / "hooks")
-        self.core = self.root / "skills/devloop-core/SKILL.md"
+        self.core = self.root / "skills/engineering/SKILL.md"
         self.core.parent.mkdir(parents=True)
         self.write_core("# Fixture guidance\n\nKeep this paragraph.\n\n---\n\nAnd this one.")
         self.cwd = Path(self.temp.name) / "unrelated project"
@@ -26,17 +26,23 @@ class CoreLoadingTests(unittest.TestCase):
 
     def write_core(self, body):
         self.core.write_text(
-            "---\nname: devloop-core\ndescription: Test metadata only.\n---\n\n"
+            "---\nname: engineering\ndescription: Test metadata only.\n---\n\n"
             + body + "\n"
         )
 
-    def run_hook(self, *, source="startup", set_root=True):
-        config = json.loads((self.root / "hooks/hooks.json").read_text())
-        hook = config["hooks"]["SessionStart"][0]["hooks"][0]
-        argv = [hook["command"]] + [
-            arg.replace("${CLAUDE_PLUGIN_ROOT}", str(self.root))
+    def declared_session_start(self, root):
+        config = json.loads((root / "hooks/hooks.json").read_text())
+        return config["hooks"]["SessionStart"][0]
+
+    def declared_hook_argv(self, root):
+        hook = self.declared_session_start(root)["hooks"][0]
+        return [hook["command"]] + [
+            arg.replace("${CLAUDE_PLUGIN_ROOT}", str(root))
             for arg in hook["args"]
         ]
+
+    def run_hook(self, *, source="startup", set_root=True):
+        argv = self.declared_hook_argv(self.root)
         env = os.environ.copy()
         env.pop("CLAUDE_PLUGIN_ROOT", None)
         if set_root:
@@ -54,6 +60,23 @@ class CoreLoadingTests(unittest.TestCase):
         self.assertIn(str(self.core.parent), result.stdout)
         self.assertIn("# Fixture guidance\n\nKeep this paragraph.\n\n---\n\nAnd this one.", result.stdout)
         self.assertNotIn("Test metadata only", result.stdout)
+        self.assertEqual(list(self.cwd.iterdir()), [])
+
+    def test_declared_hook_loads_actual_engineering_body(self):
+        core = REPO / "skills/engineering/SKILL.md"
+        env = os.environ.copy()
+        env["CLAUDE_PLUGIN_ROOT"] = str(REPO)
+        result = subprocess.run(
+            self.declared_hook_argv(REPO), cwd=self.cwd, env=env, text=True,
+            capture_output=True,
+            input=json.dumps({"hook_event_name": "SessionStart", "source": "startup"}),
+            timeout=5,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn(str(core), result.stdout)
+        self.assertIn("devloop:engineering source:", result.stdout)
+        self.assertIn("# Engineering Defaults", result.stdout)
+        self.assertNotIn("description:", result.stdout)
         self.assertEqual(list(self.cwd.iterdir()), [])
 
     def test_next_load_reads_changed_source(self):

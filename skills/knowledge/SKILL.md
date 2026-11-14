@@ -1,6 +1,6 @@
 ---
-name: devloop-knowledge
-description: "Decide what engineering findings, rationale, or active task state to retain, where to put them, and when to retire them. Use during substantial investigations, handoffs, or resumption when continuity matters; small edits do not require new notes."
+name: knowledge
+description: "Organize and retain engineering findings, rationale, or active task state: decide what belongs in scoped local knowledge or tracked records, where to put it, and when to retire it. Use during substantial investigations, handoffs, or resumption when continuity matters; small edits do not require new notes."
 ---
 
 # Knowledge and Continuity
@@ -9,7 +9,7 @@ These are the owner's defaults; apply them within current task intent and projec
 
 Keep information after a task when its loss would make a future decision harder, less reliable, or require avoidable investigation. Preserve what is needed to apply or reassess the conclusion, not the full investigation record.
 
-This skill decides what to retain, where it belongs, and when it expires. [devloop-communication](../devloop-communication/SKILL.md) governs how to express it.
+This skill decides what to retain, where it belongs, and when it expires.
 
 ## Record what future decisions need
 
@@ -36,4 +36,4 @@ During active work, observations, hypotheses, and failed approaches may help con
 
 Before cleanup or migration, check for unique authored knowledge and necessary evidence even in ignored or generated-looking locations. Distill it into existing project surfaces where appropriate. Historical existence alone does not justify a permanent archive, and a cleaner directory is not worth losing useful information.
 
-When creating or maintaining temporary working state, handing off, or resuming interrupted work, read [Working context](references/working-context.md). Use [devloop-communication](../devloop-communication/SKILL.md) when writing the conclusions that remain.
+When organizing scoped local knowledge, creating or maintaining temporary working state, handing off, or resuming interrupted work, read [Scoped context](references/scoped-context.md). Use [writing](../writing/SKILL.md) when writing the conclusions that remain.

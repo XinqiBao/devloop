@@ -4,14 +4,14 @@ devloop holds the owner's engineering defaults and judgment for use across proje
 
 ## Read and load
 
-The core applies throughout engineering work. Situational skills load as their decisions become relevant.
+The engineering defaults apply throughout engineering work. Situational skills load as their decisions become relevant.
 
 | Skill | When it applies |
 | --- | --- |
-| [Engineering defaults](skills/devloop-core/SKILL.md) | Throughout engineering work; routes to relevant skills and [deeper judgment](skills/devloop-core/references/judgment.md). |
-| [Commits](skills/devloop-commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
-| [Engineering communication](skills/devloop-communication/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
-| [Knowledge and continuity](skills/devloop-knowledge/SKILL.md) | Retaining findings, placing rationale, handing off, or recovering work; includes [working context](skills/devloop-knowledge/references/working-context.md). |
+| [Engineering defaults](skills/engineering/SKILL.md) | Throughout engineering work; routes to relevant skills and [deeper judgment](skills/engineering/references/judgment.md). |
+| [Commits](skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
+| [Writing](skills/writing/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
+| [Knowledge and continuity](skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](skills/knowledge/references/scoped-context.md). |
 
 Setup preferences cover [Git layout](preferences/git-layout.md) and [status lines](preferences/status-lines.md). Apply them when configuring a relevant environment; effective tool settings stay in native configuration.
 

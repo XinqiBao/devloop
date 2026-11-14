@@ -33,17 +33,17 @@ Put guidance where its intended readers already look. Keep provider and tool set
 
 Several agents may share one guidance file through short native entry points. Split content when readers, scopes, or maintenance needs differ enough to justify another file. Choose directory, linkage, and file count for the target environment.
 
-Keep the skill sources together with their references. Arrange for `devloop-core` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
+Keep the skill sources together with their references. Arrange for `engineering` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
 
 ## Claude Code
 
-The plugin and marketplace are defined in `.claude-plugin/`. The read-only `SessionStart` hook loads `devloop-core` at startup, resume, clear, and compaction. It requires command-hook `args` support, `sh`, and `awk`.
+The plugin and marketplace are defined in `.claude-plugin/`. The read-only `SessionStart` hook loads `engineering` at startup, resume, clear, compaction, and fork. It requires command-hook `args` support, `sh`, and `awk`.
 
 Local-directory marketplaces load in place. Keep their package directory available at runtime and independent of the development checkout.
 
 Reconcile superseded personal guidance when enabling the plugin. Preserve unrelated conversation preferences, host runbooks, and project rules. Installation does not perform this reconciliation.
 
-Verify actual core injection and situational skill selection outside this checkout, including after compaction. A `SessionStart` error does not block the session; inspect hook failures rather than assuming guidance loaded.
+Verify actual engineering-defaults injection and situational skill selection outside this checkout, including after compaction. A `SessionStart` error does not block the session; inspect hook failures rather than assuming guidance loaded.
 
 ## Codex
 
@@ -52,10 +52,10 @@ Expose the shared skills through native discovery, preserving references and sib
 In the existing user-level `~/.codex/AGENTS.md`, add a short loading instruction such as:
 
 ```text
-For engineering work, read ~/.agents/skills/devloop-core/SKILL.md before substantive work and again after context compaction. Use its routes to load situational devloop skills as work progresses. Keep devloop policy in the installed skills rather than copying it into this entry point.
+For engineering work, read ~/.agents/skills/engineering/SKILL.md before substantive work and again after context compaction. Use its routes to load situational devloop skills as work progresses. Keep devloop policy in the installed skills rather than copying it into this entry point.
 ```
 
-Discovery exposes names and descriptions. This entry point asks the model to read the core body; it does not provide the Claude hook's automatic injection. Verify loading and restoration after compaction on the target client. Reconcile installed copies deliberately when updating devloop.
+Discovery exposes names and descriptions. This entry point asks the model to read the engineering defaults body; it does not provide the Claude hook's automatic injection. Verify loading and restoration after compaction on the target client. Reconcile installed copies deliberately when updating devloop.
 
 ## Check the result
 

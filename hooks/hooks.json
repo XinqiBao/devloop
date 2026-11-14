@@ -1,9 +1,9 @@
 {
-  "description": "Inject the devloop core policy when a session starts, resumes, clears, or compacts.",
+  "description": "Inject the devloop engineering defaults when a session starts, resumes, clears, compacts, or forks.",
   "hooks": {
     "SessionStart": [
       {
-        "matcher": "startup|resume|clear|compact",
+        "matcher": "startup|resume|clear|compact|fork",
         "hooks": [
           {
             "type": "command",
