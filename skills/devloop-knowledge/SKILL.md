@@ -30,4 +30,4 @@ For example, state a current API constraint near the interface. Link to the comm
 
 During active work, observations, hypotheses, and failed approaches may help continuity. At completion, retain only conclusions and supporting detail future work needs. Keep a failed approach when its reason for failure would otherwise be rediscovered; retire the rest.
 
-When preserving active state for a handoff or resuming interrupted work, read [Working context](references/working-context.md). Use devloop-communication when writing the conclusions that remain.
+When creating or maintaining temporary working state, handing off, or resuming interrupted work, read [Working context](references/working-context.md). Use [devloop-communication](../devloop-communication/SKILL.md) when writing the conclusions that remain.

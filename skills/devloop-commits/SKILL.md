@@ -24,7 +24,7 @@ Use Conventional Commits by default so history is easy to scan. The format descr
 
 State the intent in the subject. Add a body when a surprising tradeoff or rejected alternative would otherwise be hard to recover.
 
-History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. the devloop-knowledge skill covers that placement.
+History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. [devloop-knowledge](../devloop-knowledge/SKILL.md) covers that placement.
 
 ## Choose workflow for the repository
 

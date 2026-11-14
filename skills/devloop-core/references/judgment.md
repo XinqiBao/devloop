@@ -50,7 +50,7 @@ Verification checks whether the result holds; it is not a fixed set of gates.
 
 Small work may already be recoverable from the code, diff, and history. Longer or uncertain work may need a brief current record of important findings, unresolved decisions, and next useful steps when reconstructing them would be costly or unreliable.
 
-Keep such a record current and limited to the continuity need. Plans and progress notes are aids, not required deliverables. The devloop-knowledge skill covers temporary state in more detail.
+Keep such a record current and limited to the continuity need. Plans and progress notes are aids, not required deliverables. [devloop-knowledge](../../devloop-knowledge/SKILL.md) covers temporary state in more detail.
 
 ## Evaluate persistent mechanisms
 
