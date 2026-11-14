@@ -58,6 +58,8 @@ Report what you checked, what relevant behavior remains unchecked, and any mater
 
 Verification checks whether the result holds; it is not a fixed set of gates.
 
+Review against the intended outcome, supported behavior, and relevant constraints. Ground findings in concrete failures, violated requirements, or meaningful maintenance costs. Distinguish defects from optional improvements and stylistic alternatives; a suggestion is not automatically a reason to change the implementation. A review with no warranted changes is a valid result; do not pad it with unrelated suggestions.
+
 Tests also have a maintenance cost. Protect supported contracts, meaningful state transitions, and consequential failure paths. Avoid assertions that merely mirror implementation structure and obstruct valid changes. During rapid iteration, run focused checks; complete the relevant delivery checks once the result is ready rather than rerunning every passed suite after each small edit.
 
 ## Preserve only the state needed to resume

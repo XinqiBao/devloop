@@ -11,7 +11,7 @@ Engineering artifacts should let future engineers and agents understand a decisi
 
 ## State the decision and its basis
 
-Lead with the conclusion or question the reader needs to act on. State the evidence and assumptions behind it.
+Lead with the conclusion or question the reader needs to act on, then give the evidence and assumptions behind it. Order the explanation for the reader's decision rather than the author's discovery process.
 
 For example, a caching decision should name the repeated work it avoids and the acceptable amount of stale data. "Cache for performance" does not show when the choice is valid.
 
@@ -22,8 +22,6 @@ State concrete behavior and evidence instead of promotional language or unsuppor
 Preserve technical meaning when editing. Do not invent guarantees, causes, or broader scope to make an explanation read smoothly.
 
 Use a short example when it shows why judgment changes between cases. Remove details that do not affect the decision, but keep the reasoning needed to apply or reassess it. Do not compress several decisions into one sentence to save space.
-
-Present the conclusion and its basis directly. Do not make readers reconstruct them from the order in which the author discovered them.
 
 ## Match form to information
 
