@@ -1,6 +1,6 @@
 # Applying devloop
 
-Use devloop when configuring a new or existing development environment. Install relevant skills as a self-contained copy or package, and keep effective tool settings in native configuration, so neither depends on this development checkout at runtime. This is an owner-initiated task; use the prompt in [README.md](README.md).
+Use devloop when configuring a new or existing development environment. Install the plugin through the client's native manager and keep effective tool settings in native configuration, so neither depends on this development checkout at runtime. This is an owner-initiated task; use the prompt in [README.md](README.md).
 
 ## Inspect effective guidance
 
@@ -37,16 +37,9 @@ Keep the skill sources together with their references. Arrange for `engineering`
 
 ## Install the shared package
 
-The plugin and marketplace are defined in `.claude-plugin/`. Claude Code and Codex both consume the same `devloop@devloop` package. Install it through each client's native marketplace instead of copying skills into user-level directories.
+The plugin and marketplace are defined in `.claude-plugin/`. Claude Code and Codex both consume `devloop@devloop` from the `XinqiBao/devloop` Git marketplace. Use each client's native marketplace and installation commands; reconcile an existing source with the same name and refresh it when needed. Keep installation and updates managed by the client.
 
 ### Claude Code
-
-```sh
-claude plugin marketplace add XinqiBao/devloop
-claude plugin install devloop@devloop
-```
-
-If the marketplace is already configured, update it before installing: `claude plugin marketplace update devloop`.
 
 The read-only `SessionStart` hook loads `engineering` at startup, resume, clear, compaction, and fork. It requires `sh` and `awk`. Verify actual engineering-defaults injection and situational skill selection outside this checkout, including after compaction. A `SessionStart` error does not block the session; inspect hook failures rather than assuming guidance loaded.
 
@@ -54,18 +47,9 @@ Reconcile superseded personal guidance when enabling the plugin. Preserve unrela
 
 ### Codex
 
-```sh
-codex plugin marketplace add XinqiBao/devloop
-codex plugin add devloop@devloop
-```
-
 Codex discovers the same skills from the installed package and runs the same `SessionStart` hook. Review and trust the plugin hook before relying on automatic injection: Codex reports new or changed hooks at session start, and `/hooks` shows the same review. Trust is required again after the hook changes. The hook can run outside the sandbox after trust; reserve `--dangerously-bypass-hook-trust` for automation that already vets the plugin.
 
 Verify that the `devloop:*` skills are discoverable and that the engineering defaults are injected at session start and after compaction. Do not also copy the skills into a user-level entry point; that duplicates policy and drifts. Reconcile and remove superseded standalone copies deliberately.
-
-### Older clients
-
-If a client cannot install plugins, copy `skills/` into a location it reads and add a short native entry-point instruction to read `engineering/SKILL.md` at the start of engineering work and again after compaction. Keep the copy self-contained and reconcile it deliberately when devloop changes.
 
 ## Check the result
 
