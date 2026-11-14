@@ -1,0 +1,10 @@
+{
+  "name": "devloop",
+  "version": "0.1.0",
+  "description": "Portable engineering defaults and agent workflow guidance.",
+  "author": {
+    "name": "Xinqi Bao",
+    "email": "xbao@xinqibao.xyz"
+  },
+  "repository": "https://github.com/XinqiBao/devloop"
+}

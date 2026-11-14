@@ -1,0 +1,21 @@
+{
+  "name": "devloop",
+  "description": "Portable engineering defaults and agent workflow guidance.",
+  "owner": {
+    "name": "Xinqi Bao",
+    "email": "xbao@xinqibao.xyz"
+  },
+  "plugins": [
+    {
+      "name": "devloop",
+      "source": "./",
+      "description": "Portable engineering defaults and agent workflow guidance.",
+      "category": "workflow",
+      "tags": [
+        "engineering",
+        "workflow",
+        "guidance"
+      ]
+    }
+  ]
+}
