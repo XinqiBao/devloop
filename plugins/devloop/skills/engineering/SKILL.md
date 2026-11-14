@@ -19,7 +19,7 @@ These are the owner's engineering defaults. Apply them within current explicit t
 
 Use these installed skills when work enters the relevant situation, including stages reached inside a longer task. A plugin may prefix their names with its namespace.
 
-- **commits:** before grouping changes into commits, writing commit messages, or assessing history. Use Conventional Commits and coherent engineering intent by default.
+- **commits:** when planning substantial work that will be committed, grouping changes, writing commit messages, or assessing history. Record coherent purposes as work progresses, using Conventional Commits by default.
 - **writing:** when writing engineering documents, pull request descriptions, or lasting explanations. Lead with the decision and useful evidence; omit incidental agent narration and automatic attribution unless useful or required.
 - **knowledge:** when organizing scoped local knowledge, deciding what findings or active state to preserve, preparing a handoff, or recovering substantial interrupted work. Small work may need no separate record.
 

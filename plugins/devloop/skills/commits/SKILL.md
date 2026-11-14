@@ -1,6 +1,6 @@
 ---
 name: commits
-description: "Apply the owner's commit conventions when organizing changes into commits, writing commit messages, or reviewing commit boundaries. Use when work reaches a commit stage, including during a larger task."
+description: "Apply the owner's commit conventions when planning substantial work that will be committed, grouping changes, writing commit messages, or reviewing history. Use during the work, not only at final delivery."
 ---
 
 # Commits
@@ -8,6 +8,8 @@ description: "Apply the owner's commit conventions when organizing changes into 
 These are the owner's defaults; apply them within current task intent and project requirements.
 
 A commit should represent one coherent engineering purpose. History should show what changed, why the changes belong together, how behavior evolved, and where a decision or regression entered.
+
+When committing is authorized, commit completed, checked purposes as the work progresses. Do not accumulate several finished purposes into one final diff and rely on a summary to recover their boundaries. Reassess the boundary before starting another purpose; a small task with one purpose may need only one commit.
 
 ## Choose boundaries by purpose
 
