@@ -6,6 +6,12 @@ These preferences apply when coding agents operate tools or coordinate other age
 
 Prefer native edit or patch tools for ordinary file changes and native Git commands for Git operations. Keep changes targeted and reviewable. Use scripts for genuine transformations or repeated automation when they make the change more reliable; avoid ad hoc whole-file rewriting merely because it is convenient. Parsing, investigation, and probes can still use scripts.
 
+## Report useful progress
+
+Group routine operations without announcing each read, search, edit, or successful check. During longer work, give brief updates on useful findings, changes of direction, blockers, and what the next step will resolve. Avoid repeating plans or reassurance without new information.
+
+Summarize routine successful output. Include relevant failure details or a precise route to them when they affect the next decision. Keep diagnostics and exit status available for verification rather than discarding them for a quieter transcript. At completion, state the result, relevant checks, and unresolved issues without replaying the activity log.
+
 ## Delegate bounded outcomes
 
 Consider parallel work when investigation, implementation, or review can be separated into useful outcomes with limited overlap. Prefer giving an agent continuing responsibility for a component or question over making the coordinator execute every small step. Keep tightly coupled decisions together; parallelism has coordination and context costs.
@@ -16,7 +22,7 @@ Choose the worker's lifecycle for the work. A bounded lookup or independent revi
 
 Reuse a suitable worker for follow-up while its ownership and context still fit. A live conversation can still compact, drift, or become unavailable, so it does not replace shared project records or a useful checkpoint. Use the available orchestration interface; terminal-multiplexer commands and session controls belong in that tool's maintained skill, not copied into this guidance.
 
-The coordinator owns direction, dependencies, shared-resource conflicts, acceptance, and integration. Monitor progress, resolve stalls within existing authority, and revise assignments when evidence changes the plan. A worker's completion message is a claim to review against its output and checks.
+The coordinator owns direction, dependencies, shared-resource conflicts, acceptance, and integration. Monitor progress, resolve stalls within existing authority, and revise assignments when evidence changes the plan. Ask workers for conclusions, evidence locations, and unresolved issues rather than full activity logs. A worker's completion message is a claim to review against its output and checks.
 
 ## Leave the environment tidy
 

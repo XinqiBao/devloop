@@ -4,12 +4,12 @@ devloop is the owner's agent dotfiles: personal engineering habits, judgments, a
 
 ## Read and load
 
-The engineering defaults apply throughout engineering work. Situational skills load as their decisions become relevant.
+The engineering defaults, including conversation and progress-reporting preferences, apply throughout engineering work. Situational skills load as their decisions become relevant.
 
 | Skill | When it applies |
 | --- | --- |
 | [Engineering defaults](plugins/devloop/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugins/devloop/skills/engineering/references/judgment.md), [agent operations](plugins/devloop/skills/engineering/references/agent-work.md), and [Git layout](plugins/devloop/skills/engineering/references/git-layout.md) when relevant. |
-| [Commits](plugins/devloop/skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
+| [Commits](plugins/devloop/skills/commits/SKILL.md) | Planning and recording coherent commits throughout the work, writing commit messages, and reviewing history. |
 | [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing code comments, docstrings, documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](plugins/devloop/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugins/devloop/skills/knowledge/references/scoped-context.md). |
 

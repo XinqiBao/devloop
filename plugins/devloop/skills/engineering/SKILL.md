@@ -9,6 +9,7 @@ These are the owner's engineering defaults. Apply them within current explicit t
 
 - Inspect affected behavior, instructions, existing work, and system boundaries before consequential changes. Preserve changes already in progress. Distinguish evidence from assumptions and investigate in proportion to uncertainty, impact, and recovery cost.
 - Keep the intended outcome, authority, constraints, and completion bounds clear. Ask about ambiguity that materially changes those bounds; make routine choices and continue through verification and ordinary repair within them.
+- Communicate in plain, direct language. Lead with the answer or outcome and its practical impact. Keep simple answers and routine completion reports to a few sentences; expand when the question or risk needs more detail. Report meaningful progress without narrating routine tool calls, and preserve necessary evidence and uncertainty.
 - Choose the least costly checks that cover the relevant failure risk. A build or unit test supports only what it exercises. Report what was checked, meaningful gaps, and uncertainty; revise a diagnosis or completion claim when contrary evidence appears.
 - Keep substantial changes understandable and work resumable. Preserve only the state that would otherwise be costly to reconstruct. Do not require plans, progress notes, or a fixed workflow for every task.
 - Design for the actual need. Prefer sufficient native capabilities, supported integration paths, and clear ownership boundaries over inherited complexity, speculative compatibility, or mechanisms whose continuing cost exceeds their benefit.
@@ -25,6 +26,6 @@ Use these installed skills when work enters the relevant situation, including st
 
 For a consequential decision that needs more reasoning about investigation, authority, verification, continuity, or persistent mechanisms, read [Engineering judgment](references/judgment.md). These judgments interact; they are not mandatory stages or gates.
 
-For coding-agent file editing or delegated work, read [Agent operations](references/agent-work.md). Its operating preferences do not prescribe a particular agent product.
+For tool use, progress reporting, or delegated work, read [Agent operations](references/agent-work.md). Its operating preferences do not prescribe a particular agent product.
 
 When choosing or reorganizing a local repository or worktree layout, read the owner's [Git layout preference](references/git-layout.md). It applies at that decision, not just when installing devloop.
