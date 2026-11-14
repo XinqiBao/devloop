@@ -10,7 +10,7 @@ The engineering defaults apply throughout engineering work. Situational skills l
 | --- | --- |
 | [Engineering defaults](plugins/devloop/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugins/devloop/skills/engineering/references/judgment.md), [agent operations](plugins/devloop/skills/engineering/references/agent-work.md), and [Git layout](plugins/devloop/skills/engineering/references/git-layout.md) when relevant. |
 | [Commits](plugins/devloop/skills/commits/SKILL.md) | Grouping changes, writing commit messages, and reviewing history. |
-| [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing documents, pull request descriptions, and durable explanations. |
+| [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing code comments, docstrings, documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](plugins/devloop/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugins/devloop/skills/knowledge/references/scoped-context.md). |
 
 The [status-line preference](plugins/devloop/preferences/status-lines.md) applies when configuring an agent interface; effective tool settings stay in native configuration.

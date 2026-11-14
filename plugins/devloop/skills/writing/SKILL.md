@@ -1,6 +1,6 @@
 ---
 name: writing
-description: "Apply the owner's writing preferences when drafting or revising engineering documents, pull request descriptions, design explanations, or durable investigation conclusions. Does not set the language or format of ordinary conversation."
+description: "Apply the owner's writing preferences when drafting or revising code comments, docstrings, engineering documents, pull request descriptions, or durable explanations. Does not set the language or format of ordinary conversation."
 ---
 
 # Writing
@@ -16,6 +16,10 @@ Lead with the conclusion or question the reader needs to act on. State the evide
 For example, a caching decision should name the repeated work it avoids and the acceptable amount of stale data. "Cache for performance" does not show when the choice is valid.
 
 State the concrete problem before introducing abstract terms. Prefer ordinary, precise language; use technical terms when they add precision. Keep each sentence focused on one point.
+
+State concrete behavior and evidence instead of promotional language or unsupported claims of quality. Remove repeated caveats and boilerplate qualifications; retain conditions that affect correctness or the reader's decision.
+
+Preserve technical meaning when editing. Do not invent guarantees, causes, or broader scope to make an explanation read smoothly.
 
 Use a short example when it shows why judgment changes between cases. Remove details that do not affect the decision, but keep the reasoning needed to apply or reassess it. Do not compress several decisions into one sentence to save space.
 
@@ -40,6 +44,8 @@ When a diagram makes a relationship clearer than text, use a maintainable format
 
 Keep tracked engineering artifacts in English by default, subject to task intent and project conventions.
 
-Write for the intended reader's knowledge and decisions. Delivered documentation should explain the project, its behavior, and necessary caveats; omit basic tool tutorials and development-only trial instructions unless those are its purpose. Do not add comments that merely restate visible configuration or code.
+Write for the intended reader's knowledge and decisions. Delivered documentation should explain the project, its behavior, and necessary caveats; omit basic tool tutorials and development-only trial instructions unless those are its purpose.
+
+Use code comments and docstrings for contracts, constraints, or intent that is not clear from the code. Keep them accurate for current behavior; omit line-by-line paraphrases and accounts of the editing process.
 
 Omit prompt residue, agent narration, and automatic agent or tool attribution unless they affect a decision, provenance, reproducibility, or interpretation. Avoid decorative structure and fixed templates that add reading cost.
