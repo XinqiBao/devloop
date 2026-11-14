@@ -1,6 +1,6 @@
 # Applying devloop
 
-Use devloop as a reference when configuring a new or existing development environment. When changes are needed, put engineering guidance in that environment's own files and tool preferences in native configuration so neither depends on this checkout at runtime.
+Use devloop when configuring a new or existing development environment. Install relevant skills as a self-contained copy or package, and keep effective tool settings in native configuration, so neither depends on this development checkout at runtime. This is an owner-initiated task; use the prompt in [README.md](README.md).
 
 ## Inspect effective guidance
 
@@ -19,7 +19,7 @@ Finding a file does not authorize editing it. For environment-wide work, do not 
 
 ## Decide what to apply
 
-Compare what the target already uses with the relevant judgments and optional tool preferences in devloop:
+Compare what the target already uses with the relevant skills in devloop:
 
 - Add guidance or tool preferences where the target has a real gap.
 - Keep existing behavior when it already covers the need.
@@ -32,6 +32,8 @@ A review may end with no changes.
 Put guidance where its intended readers already look. Keep provider and tool settings in native configuration. Meet compatible existing requirements; ask the owner to choose when requirements conflict or a choice would materially change the outcome.
 
 Several agents may share one guidance file through short native entry points. Split content when readers, scopes, or maintenance needs differ enough to justify another file. Choose directory, linkage, and file count for the target environment.
+
+Keep the skill sources together with their references. Arrange for `devloop-core` to load throughout engineering work and for situational skills to be discoverable when needed. An instruction to read a skill is weaker than a native import of its content; verify the target client's behavior at session start and after compaction. Do not treat a link, a skill description, or a successful install as proof of loading.
 
 ## Check the result
 

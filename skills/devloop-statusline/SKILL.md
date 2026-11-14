@@ -1,4 +1,11 @@
+---
+name: devloop-statusline
+description: "Apply the owner's optional display preferences when configuring or reviewing a coding agent status line or footer. Use for an actual display configuration task, not ordinary development or general agent setup."
+---
+
 # Status Lines
+
+These are the owner's defaults; apply them within current task intent and project requirements.
 
 A status line can keep a few useful session facts visible while working with a coding agent. Treat it as an optional interface preference, not an instruction to the agent. Keep it short enough for the terminal in use.
 

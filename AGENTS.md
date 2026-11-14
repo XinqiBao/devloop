@@ -2,6 +2,8 @@
 
 Read [README.md](README.md) and the relevant guidance before changing this repository.
 
+Keep portable personal guidance in `skills/`. Treat a skill's entry point and its references as one maintained topic. Native loaders and plugin packaging may select or expose that content, but must not maintain a second policy copy. Keep application and extraction as explicit prompts, not skills.
+
 ## Scope and selection
 
 Keep tracked material in English. Keep general engineering guidance independent of any checkout or agent product. Clearly scope agent-specific preferences and keep them separate from general guidance. Do not present private context, local settings, or repository-specific rules as portable guidance.
@@ -18,7 +20,7 @@ Strengthen an existing topic before adding a document. Split a topic only when i
 
 Write direct engineering guidance. Remove unnecessary material, but keep the reasoning needed to apply a judgment.
 
-Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Engineering Communication](guidance/communication.md) without imposing a template or teaching basic tools.
+Choose headings, prose, lists, comparisons, or examples according to the information. Follow [Engineering Communication](skills/devloop-communication/SKILL.md) without imposing a template or teaching basic tools.
 
 Before claiming completion:
 

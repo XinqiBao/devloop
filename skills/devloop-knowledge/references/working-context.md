@@ -17,7 +17,7 @@ Working context is subordinate to tracked project truth. Check it against the pr
 
 ## Retire or promote
 
-Keep working context current while it helps continuity. When that need ends, remove the note from the active path. Put any lasting conclusion in its proper durable location using [Durable Knowledge](knowledge.md). Do not leave a second authority for project facts.
+Keep working context current while it helps continuity. When that need ends, remove the note from the active path. Put any lasting conclusion in its proper durable location using [Durable knowledge](../SKILL.md). Do not leave a second authority for project facts.
 
 Do not use `.context/` for:
 

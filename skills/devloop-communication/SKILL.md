@@ -1,4 +1,11 @@
+---
+name: devloop-communication
+description: "Apply the owner's writing preferences when drafting or revising engineering documents, pull request descriptions, design explanations, or durable investigation conclusions. Does not set the language or format of ordinary conversation."
+---
+
 # Engineering Communication
+
+These are the owner's defaults; apply them within current task intent and project requirements.
 
 Engineering artifacts should let future engineers and agents understand a decision or continue the work. State the decision and the facts, reasoning, limits, and uncertainty needed to use it later.
 

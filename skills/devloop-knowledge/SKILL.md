@@ -1,4 +1,11 @@
+---
+name: devloop-knowledge
+description: "Decide what engineering findings, rationale, or active task state to retain, where to put them, and when to retire them. Use during substantial investigations, handoffs, or resumption when continuity matters; small edits do not require new notes."
+---
+
 # Durable Knowledge
+
+These are the owner's defaults; apply them within current task intent and project requirements.
 
 Keep information after a task when its loss would make a future decision harder, less reliable, or require avoidable investigation. Preserve what is needed to apply or reassess the conclusion, not the full investigation record.
 
@@ -23,4 +30,4 @@ For example, state a current API constraint near the interface. Link to the comm
 
 During active work, observations, hypotheses, and failed approaches may help continuity. At completion, retain only conclusions and supporting detail future work needs. Keep a failed approach when its reason for failure would otherwise be rediscovered; retire the rest.
 
-[Working context](context.md) covers temporary continuity state. [Engineering communication](communication.md) covers how to express what remains.
+When preserving active state for a handoff or resuming interrupted work, read [Working context](references/working-context.md). Use devloop-communication when writing the conclusions that remain.

@@ -1,4 +1,11 @@
+---
+name: devloop-commits
+description: "Apply the owner's commit conventions when organizing changes into commits, writing commit messages, or reviewing commit boundaries. Use when work reaches a commit stage, including during a larger task."
+---
+
 # Commits
+
+These are the owner's defaults; apply them within current task intent and project requirements.
 
 A commit should represent one coherent engineering purpose. History should show what changed, why the changes belong together, how behavior evolved, and where a decision or regression entered.
 
@@ -17,7 +24,7 @@ Use Conventional Commits by default so history is easy to scan. The format descr
 
 State the intent in the subject. Add a body when a surprising tradeoff or rejected alternative would otherwise be hard to recover.
 
-History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. [Durable Knowledge](knowledge.md) covers that placement.
+History can preserve why a change was made. A constraint or decision that future work must routinely account for also belongs near the relevant code or interface; an old commit message is too easy to miss. the devloop-knowledge skill covers that placement.
 
 ## Choose workflow for the repository
 
