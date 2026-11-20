@@ -13,7 +13,9 @@ project/
   feature-b/            an independent worktree
 ```
 
-Names and checkout roles depend on the repository. This preference does not require a worktree for every task, a particular baseline or merge policy, or permanent branch retention. It does not authorize migrating an existing repository.
+Names and checkout roles depend on the repository. This preference does not require a worktree for every task or a particular baseline or merge policy. It does not authorize migrating an existing repository.
+
+Keep local project worktrees by default after delivery, along with the branches they need. The disk cost is usually acceptable, and a completed task alone is not a reason to remove its checkout. Treat worktree removal as a separate cleanup decision within current authority, respecting repository constraints and actual storage pressure. Temporary validation fixtures created as disposable resources can still be retired when their useful results are preserved.
 
 Keep mutable task context independent in each worktree, with explicit links to shared knowledge. See [Scoped context](../../knowledge/references/scoped-context.md) for the user, project, and task boundaries.
 

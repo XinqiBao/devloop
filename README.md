@@ -9,7 +9,7 @@ The engineering defaults, including conversation and progress-reporting preferen
 | Skill | When it applies |
 | --- | --- |
 | [Engineering defaults](plugins/devloop/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugins/devloop/skills/engineering/references/judgment.md), [agent operations](plugins/devloop/skills/engineering/references/agent-work.md), and [Git layout](plugins/devloop/skills/engineering/references/git-layout.md) when relevant. |
-| [Commits](plugins/devloop/skills/commits/SKILL.md) | Planning and recording coherent commits throughout the work, writing commit messages, and reviewing history. |
+| [Commits](plugins/devloop/skills/commits/SKILL.md) | Planning and recording coherent commits, writing commit messages, updating or integrating branches, and reviewing history. |
 | [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing code comments, docstrings, documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](plugins/devloop/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugins/devloop/skills/knowledge/references/scoped-context.md). |
 

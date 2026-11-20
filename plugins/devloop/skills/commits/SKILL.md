@@ -1,6 +1,6 @@
 ---
 name: commits
-description: "Apply the owner's commit conventions when planning substantial work that will be committed, grouping changes, writing commit messages, or reviewing history. Use during the work, not only at final delivery."
+description: "Apply the owner's commit and history preferences when planning substantial work that will be committed, grouping changes, writing commit messages, updating or integrating branches, or reviewing history. Use during the work, not only at final delivery."
 ---
 
 # Commits
@@ -30,4 +30,6 @@ History can preserve why a change was made. A constraint or decision that future
 
 ## Choose workflow for the repository
 
-Branches, pull requests, worktrees, merge style, and squash decisions depend on the task and repository. Whatever workflow is used, leave understandable engineering history.
+When integrating a feature branch through a pull request, prefer a merge commit that preserves meaningful feature commits and the integration point. Retain the useful evolution of the work rather than routinely squashing it into one diff. Follow repository requirements or an explicit task decision when another integration style is appropriate; this preference does not require a branch or PR for every small change.
+
+When an isolated feature branch needs a newer mainline, prefer a rebase if rewriting its commits has little coordination cost. Check ownership and downstream consumers first; repeated mainline merges can make the feature's evolution harder to follow. Shared branches, meaningful merge topology, and repository requirements can favor a merge instead. Follow existing rewrite authority and protect others' work, including on pushed branches. Choose final PR integration separately and verify affected behavior after resolving conflicts.
