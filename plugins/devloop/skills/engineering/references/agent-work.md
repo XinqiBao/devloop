@@ -14,7 +14,7 @@ Summarize routine successful output. Include relevant failure details or a preci
 
 ## Delegate bounded outcomes
 
-Consider parallel work when investigation, implementation, or review can be separated into useful outcomes with limited overlap. Prefer giving an agent continuing responsibility for a component or question over making the coordinator execute every small step. Keep tightly coupled decisions together; parallelism has coordination and context costs.
+Consider delegating investigation, implementation, or review when it can be separated into useful outcomes with limited overlap, and run independent tasks in parallel when beneficial. Delegation can keep detailed exploration and execution out of the main conversation so it retains capacity for user intent, cross-task decisions, and integration. Prefer giving an agent continuing responsibility for a component or question over making the coordinator execute every small step. Keep small or tightly coupled work together when handoff and coordination would cost more than they save.
 
 When parallel agent work is authorized and useful, give each worker an outcome, ownership boundary, relevant context, and evidence needed for acceptance. Workers should carry their bounded work through implementation, checks, and ordinary in-scope delivery. Do not make the coordinator perform every edit or commit; commit and push authority still comes from the actual assignment.
 
@@ -22,7 +22,7 @@ Choose the worker's lifecycle for the work. A bounded lookup or independent revi
 
 Reuse a suitable worker for follow-up while its ownership and context still fit. A live conversation can still compact, drift, or become unavailable, so it does not replace shared project records or a useful checkpoint. Use the available orchestration interface; terminal-multiplexer commands and session controls belong in that tool's maintained skill, not copied into this guidance.
 
-The coordinator owns direction, dependencies, shared-resource conflicts, acceptance, and integration. Monitor progress, resolve stalls within existing authority, and revise assignments when evidence changes the plan. Ask workers for conclusions, evidence locations, and unresolved issues rather than full activity logs. A worker's completion message is a claim to review against its output and checks.
+The coordinator owns direction, dependencies, shared-resource conflicts, acceptance, and integration. Monitor progress, resolve stalls within existing authority, and revise assignments when evidence changes the plan. Keep task ownership, decisions, and dependencies recoverable in the main conversation or a shared record; let workers retain detailed task context. Ask workers for conclusions, evidence locations, and unresolved issues rather than full activity logs, and inspect underlying evidence where acceptance needs it. A worker's completion message is a claim to review against its output and checks.
 
 ## Leave the environment tidy
 
@@ -31,3 +31,5 @@ Own the lifecycle of agents and temporary resources created for the task. Before
 Before declaring completion, review the workspace and environment changes introduced by the task. Remove disposable probes, scratch files, and debug output; stop owned background processes and sessions; revert temporary configuration changes that are not part of the result. Keep intended deliverables, useful knowledge, and necessary rollback material in clearly scoped locations rather than scattered among temporary artifacts.
 
 Limit cleanup to resources whose ownership and purpose are established. Preserve pre-existing work, other tasks' sessions, and useful recovery material. A clean Git status alone does not account for ignored files or resources outside the checkout; making everything look empty is not a reason to discard useful state.
+
+Respect explicit retention preferences when deciding what is disposable. For local project worktrees, follow [Git layout](git-layout.md).
