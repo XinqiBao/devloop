@@ -36,7 +36,7 @@ Use a short example when it shows why judgment changes between cases. Remove det
 
 These are choices, not an artifact template. Use headings and structure to make important distinctions easy to scan. Do not add lists, tables, or diagrams merely for variety.
 
-When a diagram makes a relationship clearer than text, use a maintainable format. Mermaid may suit a substantial relationship; simple ASCII may suit a small one. Keep the essential meaning available in text.
+When a diagram makes a relationship clearer than text, prefer Mermaid where the target surface renders it; simple ASCII can suffice for a small relationship. Keep diagrams consistent with the actual behavior and accompanying explanation, and keep the essential meaning available in text.
 
 ## Keep artifacts focused
 

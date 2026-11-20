@@ -22,13 +22,17 @@ Stop when further investigation is unlikely to change the decision; investigatio
 
 ## Design for the actual need
 
-Start from the intended capabilities and constraints, then assess whether the current design serves them. Existing code is evidence about the system, not sufficient reason to retain its structure. Evaluate proposed solutions, including the owner's suggestions, against the need; stay within the authorized scope of redesign.
+Start from the intended outcomes and the needs of the people or systems using the result. For a consequential design, clarify expected usage or the external contract, major tradeoffs, and what a successful result would look like before choosing internal structure. Existing code is evidence about the system, not sufficient reason to retain its structure. Evaluate proposed solutions, including the owner's suggestions, against the need; stay within the authorized scope of redesign.
+
+Use focused technical investigation or a small prototype when feasibility could change the design. Resolve material choices about behavior and scope with the owner; let implementation details evolve within those bounds. Upfront detail should be proportional to uncertainty and impact.
 
 Judge simplicity by the cost of understanding, operating, verifying, and changing the result. A short patch that hides failures or introduces hidden coupling can cost more than a direct implementation. Preserve required behavior and useful reasoning when simplifying.
 
 Prefer independently understandable boundaries. Share code or split files when it improves understanding, ownership, or maintenance; uniformity alone is not a reason to couple independent components. Small cohesive configuration can stay inline.
 
 Respect independently configured components. Improving one tool does not give it ownership of another plugin's settings or the user's surrounding environment. Prefer controls within the owned component; accept a bounded limitation when the alternative is unwanted coupling. Deliberate integration can be valid when it is part of the intended product contract. Similarly, contributor tooling should not become a product runtime dependency without a user-facing need.
+
+Expose internal provider, module, or deployment boundaries as user choices when they help users make a meaningful decision. Assess the complete interaction when adding capabilities, including whether the added choices create unnecessary mental burden. Preserve differences that affect users' decisions and keep the implementation proportional to the benefit.
 
 ## Keep task boundaries distinct
 
@@ -59,6 +63,8 @@ Report what you checked, what relevant behavior remains unchecked, and any mater
 Verification checks whether the result holds; it is not a fixed set of gates.
 
 Review against the intended outcome, supported behavior, and relevant constraints. Ground findings in concrete failures, violated requirements, or meaningful maintenance costs. Distinguish defects from optional improvements and stylistic alternatives; a suggestion is not automatically a reason to change the implementation. A review with no warranted changes is a valid result; do not pad it with unrelated suggestions.
+
+For user-facing changes, exercise the affected user journey and inspect what the user actually sees. Successful backend calls alone do not establish a usable interaction. Check relevant loading, empty, failure, and recovery behavior where it affects that journey. Review maintained screenshots, demos, and examples when behavior changes; update those that would now misrepresent the product.
 
 Tests also have a maintenance cost. Protect supported contracts, meaningful state transitions, and consequential failure paths. Avoid assertions that merely mirror implementation structure and obstruct valid changes. During rapid iteration, run focused checks; complete the relevant delivery checks once the result is ready rather than rerunning every passed suite after each small edit.
 
