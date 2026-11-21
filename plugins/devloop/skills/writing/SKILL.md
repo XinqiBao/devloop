@@ -7,6 +7,8 @@ description: "Apply the owner's writing preferences when drafting or revising co
 
 These are the owner's defaults; apply them within current task intent and project requirements.
 
+Use concise English for tracked engineering artifacts unless current intent or legitimate project conventions call for another language. This does not set the language of ordinary conversation.
+
 Engineering artifacts should let future engineers and agents understand a decision or continue the work. State the decision and the facts, reasoning, limits, and uncertainty needed to use it later.
 
 ## State the decision and its basis
@@ -39,8 +41,6 @@ These are choices, not an artifact template. Use headings and structure to make 
 When a diagram makes a relationship clearer than text, prefer Mermaid where the target surface renders it; simple ASCII can suffice for a small relationship. Keep diagrams consistent with the actual behavior and accompanying explanation, and keep the essential meaning available in text.
 
 ## Keep artifacts focused
-
-Keep tracked engineering artifacts in English by default, subject to task intent and project conventions.
 
 Write for the intended reader's knowledge and decisions. Delivered documentation should explain the project, its behavior, and necessary caveats; omit basic tool tutorials and development-only trial instructions unless those are its purpose.
 

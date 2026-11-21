@@ -1,31 +1,28 @@
 ---
 name: engineering
-description: Apply the owner's cross-project engineering defaults when investigating, changing, reviewing, or resuming software work. Load at engineering session start and restore after compaction; use the relevant situational skills as work progresses.
+description: "Apply the owner's engineering judgment when investigating bugs, designing software, APIs or user experiences, implementing changes, reviewing code, or choosing verification. Includes consumer-first design and proportional investigation and checks."
 ---
 
-# Engineering Defaults
+# Engineering
 
 These are the owner's engineering defaults. Apply them within current explicit task intent and legitimate project requirements. Loading guidance does not authorize additional work or external actions. Surface material conflicts.
 
-- Inspect affected behavior, instructions, existing work, and system boundaries before consequential changes. Preserve changes already in progress. Distinguish evidence from assumptions and investigate in proportion to uncertainty, impact, and recovery cost.
-- Keep the intended outcome, authority, constraints, and completion bounds clear. Ask about ambiguity that materially changes those bounds; make routine choices and continue through verification and ordinary repair within them.
-- Communicate in plain, direct language. Lead with the answer or outcome and its practical impact. Keep simple answers and routine completion reports to a few sentences; expand when the question or risk needs more detail. Report meaningful progress without narrating routine tool calls, and preserve necessary evidence and uncertainty.
-- Choose the least costly checks that cover the relevant failure risk. A build or unit test supports only what it exercises. Report what was checked, meaningful gaps, and uncertainty; revise a diagnosis or completion claim when contrary evidence appears.
-- Keep substantial changes understandable and work resumable. Preserve only the state that would otherwise be costly to reconstruct. Do not require plans, progress notes, or a fixed workflow for every task.
-- Design from the user's or caller's needs and constraints, then choose the internal structure. Prefer sufficient native capabilities, supported integration paths, and clear ownership boundaries over inherited complexity, speculative compatibility, or mechanisms whose continuing cost exceeds their benefit.
-- Retain durable knowledge and non-obvious reasoning where future decisions need them. Avoid competing sources and stale records. Close resources created for the task when they are no longer needed, preserving useful results first.
-- Use concise English for tracked engineering artifacts unless current intent or legitimate project conventions call for another language. This does not set the language of conversation.
+For design, architecture, consequential investigation, review, or verification decisions, read [Engineering judgment](references/judgment.md). It covers consumer needs, scope, proportional evidence, ownership boundaries, and the continuing cost of mechanisms. These judgments interact; they are not mandatory stages or gates.
 
-## Load guidance at the point of use
+## Operate and communicate in proportion to the work
 
-Use these installed skills when work enters the relevant situation, including stages reached inside a longer task. A plugin may prefix their names with its namespace.
+Inspect affected instructions, behavior, and existing work before consequential edits. Preserve work already in progress. Prefer native edit or patch tools for ordinary file changes and native Git commands for Git operations. Use scripts for genuine transformations or repeated automation when they improve reliability; avoid ad hoc whole-file rewriting merely because it is convenient.
 
-- **commits:** when planning substantial work that will be committed, grouping changes, writing commit messages, updating or integrating branches, or assessing history. Record coherent purposes as work progresses, using Conventional Commits by default.
-- **writing:** when writing code comments, docstrings, engineering documents, pull request descriptions, or lasting explanations. Lead with the decision and useful evidence; omit incidental agent narration and automatic attribution unless useful or required.
-- **knowledge:** when organizing scoped local knowledge, deciding what findings or active state to preserve, preparing a handoff, or recovering substantial interrupted work. Small work may need no separate record.
+Keep the intended outcome and completion bounds clear. Resolve ambiguity that materially changes scope; make routine choices and continue through verification and ordinary repair within existing authority. Small changes need no formal plan or separate progress record.
 
-For consequential design or user-experience decisions, or more reasoning about investigation, authority, verification, continuity, or persistent mechanisms, read [Engineering judgment](references/judgment.md). These judgments interact; they are not mandatory stages or gates.
+Communicate in plain, direct language. Lead with the answer or outcome and its practical impact. Keep simple answers and routine completion reports to a few sentences; expand when the question or risk needs more detail. Group routine operations without announcing every read, search, edit, or successful check. During longer work, report useful findings, changes of direction, blockers, and what the next step will resolve.
 
-When deciding whether or how to split work across agents, or operating tools and reporting progress, read [Agent operations](references/agent-work.md). Its operating preferences do not prescribe a particular agent product.
+Summarize routine successful output. Keep diagnostics and exit status available, and include failure details or a precise route to them when they affect the next decision. State the result, relevant checks, and meaningful uncertainty without replaying the activity log.
 
-When choosing or reorganizing a local repository or worktree layout, or considering worktree cleanup, read the owner's [Git layout preference](references/git-layout.md). It applies at that decision, not just when installing devloop.
+## Close resources according to their purpose
+
+Review workspace and environment changes introduced by the task before declaring completion. Remove disposable probes, scratch files, and debug output; stop owned background processes when no longer needed. Revert temporary configuration changes that are not part of the result. Preserve useful findings, intended deliverables, and necessary recovery material first.
+
+Limit cleanup to resources whose ownership and purpose are established. Preserve pre-existing work, other tasks' sessions, and useful recovery state. A clean Git status does not account for ignored files or resources outside the checkout; making everything look empty is not a reason to discard useful state. For local project worktree retention, use [worktrees](../worktrees/SKILL.md).
+
+Other skills apply at their own decisions, including stages reached inside a longer task: [agents](../agents/SKILL.md) for work splitting and worker ownership; [commits](../commits/SKILL.md) for coherent incremental history and integration; [writing](../writing/SKILL.md) for engineering artifacts and explanations; and [knowledge](../knowledge/SKILL.md) for retained findings and continuity. They can be used directly without loading this skill first.

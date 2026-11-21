@@ -4,11 +4,13 @@ devloop is the owner's agent dotfiles: personal engineering habits, judgments, a
 
 ## Read and load
 
-The engineering defaults, including conversation and progress-reporting preferences, apply throughout engineering work. Situational skills load as their decisions become relevant.
+Skills use the client's native discovery and load when their decisions become relevant, including stages reached inside a longer task. Each skill can be selected directly; none requires loading `engineering` first.
 
 | Skill | When it applies |
 | --- | --- |
-| [Engineering defaults](plugins/devloop/skills/engineering/SKILL.md) | Throughout engineering work; routes to [judgment](plugins/devloop/skills/engineering/references/judgment.md), [agent operations](plugins/devloop/skills/engineering/references/agent-work.md), and [Git layout](plugins/devloop/skills/engineering/references/git-layout.md) when relevant. |
+| [Engineering](plugins/devloop/skills/engineering/SKILL.md) | Investigation, software and API design, user-experience decisions, implementation, review, and verification; includes [engineering judgment](plugins/devloop/skills/engineering/references/judgment.md). |
+| [Agent coordination](plugins/devloop/skills/agents/SKILL.md) | Deciding whether and how to split work, delegate bounded outcomes, run independent tasks in parallel, and manage worker context, lifecycle, and integration. |
+| [Git worktrees](plugins/devloop/skills/worktrees/SKILL.md) | Choosing or moving a bare-repository/worktree layout and deciding what to retain or clean up after delivery. |
 | [Commits](plugins/devloop/skills/commits/SKILL.md) | Planning and recording coherent commits, writing commit messages, updating or integrating branches, and reviewing history. |
 | [Writing](plugins/devloop/skills/writing/SKILL.md) | Writing code comments, docstrings, documents, pull request descriptions, and durable explanations. |
 | [Knowledge and continuity](plugins/devloop/skills/knowledge/SKILL.md) | Organizing scoped local knowledge, retaining findings, placing rationale, handing off, or recovering work; includes [scoped context](plugins/devloop/skills/knowledge/references/scoped-context.md). |

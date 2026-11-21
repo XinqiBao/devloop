@@ -35,11 +35,10 @@ Before claiming completion:
 For package changes, use the relevant checks:
 
 ```sh
-python3 -m unittest discover -s tests -v
 claude plugin validate plugins/devloop/.claude-plugin/plugin.json
 claude plugin validate .claude-plugin/marketplace.json
 ```
 
-When changing loading or routing, also exercise implicit skill selection and engineering-defaults restoration in real sessions outside this checkout. Runtime engineering-defaults loading uses the hook. Keep repository surfaces—root documentation, tests, and the repository adapter—outside `plugins/devloop/`.
+Validate changed skills and local links. When changing discovery or routing, also exercise implicit skill selection and the relevant decisions in real sessions outside this checkout. Exclude old hooks, mandatory-read adapters, and prompts naming the intended skill from implicit-selection checks. Skills use native discovery and on-demand loading; do not add a second loading path merely to guarantee invocation. Keep repository surfaces—root documentation, checks, and the repository adapter—outside `plugins/devloop/`.
 
 Use focused behavioral checks for the decision being changed. A larger eval suite is useful for recurring misrouting or uncertain behavioral benefit; compare with a baseline when measuring improvement. Do not run a full model-graded suite for every wording change or equate skill invocation with better decisions.
